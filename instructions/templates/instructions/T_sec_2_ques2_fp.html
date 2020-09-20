@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+Main Part
+{% endblock %}
+
+{% block title %}
+Feedback: 
+{% endblock %}
+
+{% block content %}
+<br>
+
+<div class="alert alert-success" role="alert" style="color:black">
+    <strong>Good job, you are totally right.</strong> The statement is incorrect. <br><br> Please note: Heuristics do not increase the mental effort, on the contrary they reduce it.  
+
+ 
+   </div>
+   <br>
+ 
+<p><strong>Correct answer:</strong></p>
+
+<img src="https://i.imgur.com/LDxpSYC.png" width="825" height="220" style=float:center alt="Error">
+
+   <div id="nextbtn" style="text-align:right; display:true">
+    {% next_button %}
+</div>
+  
+{% endblock %}

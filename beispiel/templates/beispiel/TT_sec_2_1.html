@@ -1,0 +1,115 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+    Main Part
+{% endblock %}
+
+{% block title %}
+   Causes of Cognitive Biases
+{% endblock %}
+
+{% block content %}
+
+<style>
+  img.Prof2 {
+   transition: transform 0.2s;
+   position: absolute;
+   z-index: 1;
+  }
+  img.Prof2:hover {
+   transform: scale(1.75, 1.75);
+  }
+  </style>
+
+<br>
+
+<div class="row">
+    <div class="col-sm-8 alert alert-secondary role="alert" align="justify">Thank you for submitting your answers. Let’s get started with the actual training. We are often challenged with making decisions under time pressure or a high degree of uncertainty. At the same time, it is often impossible to consider all the relevant information, as our brain is limited in its absorption and processing capacity.</div>
+    <div class="col-sm-4"><img src="{% static "Bilder Experiment/Infos.png" %}" width="310" class="Prof2" height="120" style=float:right alt="Error"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4"><img src="{% static "Bilder Experiment/Info2.png" %}" width="290" height="120" alt="Error" class="Prof2" ></div>
+    <div class="col-sm-8 alert alert-secondary role="alert" align="justify">In order to still be able to make efficient judgements, we rely on so-called heuristics or short-cuts. In doing this, our memory unconsciously searches for known actions, filters the available information and intuitively gives an answer on how to react without high cognitive effort. Most of the time this behavior is advantageous. </div>
+  </div>
+
+<div class="row">
+    <div class="col-sm-4"><img src="{% static "Bilder Experiment/Denken2.png" %}" class="Prof2" width="290" height="120" style=float:left alt="Error"></div>
+    <div class="col-sm-8 alert alert-secondary role="alert" align="justify"> For example, think of driving a car. Drivers usually carry out decisions automatically on the road. Imagine how many traffic jams would arise if you first evaluated all the information at each crossroad in major detail. Likewise, it would be simply impractical to question routine decisions like brushing your teeth or using a stapler at work. </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 alert alert-secondary role="alert" align="justify"> As you can see, by using these short-cuts you reduce mental effort and save substantial amounts of time throughout the day. While in many cases heuristics are effective, in some situations these intuitive reactions lead us to draw incorrect conclusions which science calls cognitive biases. These errors can have massive financial, personal or social consequences.</div>
+    <div class="col-sm-4"><img src="{% static "Bilder Experiment/Kons2.png" %}" class="Prof2" width="310" height="144" style=float:right alt="Error"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 alert alert-secondary role="alert" align="justify">You may wonder why people do not change their way of thinking. Well, this is because in many cases people are not aware that they could be biased. Even experts with years of experience are susceptible to biased decision-making. This demonstrates that cognitive biases are a common problem which – independent of the decision maker’s level of education – should be addressed directly.
+    </div>
+    <div class="col-sm-4"><img src="{% static "Bilder Experiment/Prof2.png" %}" class="Prof2" width="310" height="144" style=float:right alt="Error"></div>
+  </div>
+
+  <br>
+  
+<head>
+    <style>
+    .Buttonunsichtbar{
+    position:absolute;
+    display: none;
+    }
+     
+    .Buttonsichtbar{
+    position:absolute;
+    }
+    </style>
+    <script>
+    function buttonsichtbar(){
+    document.getElementById("Button").className="Buttonsichtbar";
+    }
+    window.setTimeout("buttonsichtbar()", 40000);
+    </script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>            
+            <div class="col-md-1"></div>
+            <div class="col-md-1"><input type="submit" id="Button" value="Next" class="Buttonunsichtbar" style="color:white; BACKGROUND-COLOR:rgb(23, 118, 228);"></div>
+          </div>
+    </body>
+
+    
+
+  <input type="hidden" name="time_TT_sec_2_1" id="time_TT_sec_2_1" value=0>
+
+    <script>
+    
+    var sec = 0; // global variable
+    
+    // increasing timer
+    function pad ( val ) { return val > 9 ? val : "0" + val; }
+    setInterval( function(){
+        $("#seconds").html(pad(++sec));
+        $("#time_TT_sec_2_1").val(sec); // store seconds spent on page in hidden field
+    }, 1000);
+    
+    </script>
+
+<input type="hidden" name="tabTTsec21" id="tabTTsec21" value=0>
+
+<script>
+          let tab_switch_counter = 0; 
+          $(window).blur(function() {
+            tab_switch_counter ++; 
+            $("#tabTTsec21").val(tab_switch_counter);
+          });
+</script>
+
+{% endblock %}

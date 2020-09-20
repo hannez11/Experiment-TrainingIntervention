@@ -1,0 +1,43 @@
+{% load otree static %}
+
+{% block content %}
+
+<br><br>
+<hr>
+      <div class="container" style="width: 35%;">
+          <div class="row" style="text-align: center; background-color: #fff;">
+        
+            <div class="col-sm">
+              <button type="button" id="instructionsbtn" class="btn btn-light btn-sm" data-toggle="modal" data-target="#instructions" style="border: 1px solid #a7a7a7">Instructions subtask 1</button>
+            </div>
+        
+          </div>
+      </div>
+
+    <!-- instructions -->
+    <div class="modal fade" id="instructions" tabindex="-1" role="dialog" aria-labelledby="instructionsLabel" aria-hidden="true">
+      <div class="modal-dialog modalw">
+          <div class="modal-content">
+
+              <div class="modal-header">
+                   <h4 class="modal-title" id="instructionsLabel">Instructions subtask 1</h4>
+              </div>
+
+              <div class="modal-body">
+                <!-- see _templates/global/InstructionsTemplate.html -->
+                <p><ul class="list-group">
+                  <li class="list-group-item list-group-item-secondary" align="justify">  <strong>In this subtask you should provide a lower and an upper estimate for 10 questions.</strong> You should be 90 percent sure that the correct answer to the question is within the range you indicated. This means that 9 of the 10 intervals you estimated should contain the correct answer. Please enter an integer estimated value without a decimal separator. In addition, pay close attention to the units you are asked for. 
+                      </li>
+                    </ul>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default mr-auto" data-dismiss="modal">Close</button>
+              </div>
+
+          </div>
+      </div>
+    </div>
+
+{% endblock %}
+
+

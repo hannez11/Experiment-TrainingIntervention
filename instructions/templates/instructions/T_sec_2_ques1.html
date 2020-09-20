@@ -1,0 +1,40 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+   Main Part
+{% endblock %}
+
+{% block title %}
+   Please answer the following question:
+{% endblock %}
+
+
+{% block content %}
+
+<br>
+
+{% for field in form %}
+<div class="card bg-light m-3">
+    <div class="card-body">
+
+            <b>{{ field.label }}</b>
+            <hr>
+            {{ field }}
+
+            {% if field.errors %}
+            <div class="alert alert-danger" role="alert">
+                {{ field.errors }}
+            </div>
+            {% endif %}
+{% endfor %}
+</div></div>
+
+<br>
+
+<div id="nextbtn" style="text-align:right; display:true">
+    {% next_button %}
+</div>
+  
+
+{% endblock %}

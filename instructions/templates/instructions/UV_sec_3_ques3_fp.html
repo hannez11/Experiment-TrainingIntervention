@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+Main Part
+{% endblock %}
+
+{% block title %}
+Feedback: 
+{% endblock %}
+
+{% block content %}
+<br>
+
+<div class="alert alert-success" role="alert" style="color:black">
+    <strong>Very good. </strong>But of course you will receive feedback about the actual answer. According to CalPERS, long-term value creation requires the effective management of three forms of capital: Financial, human and physical.
+
+   </div>
+   <br>
+ 
+<p><strong>If you did not have to choose the second answer, the correct answer would be:</strong></p>
+
+<img src="https://i.imgur.com/1pC2iR2.png" width="825" height="230" style=float:center alt="Error">
+
+   <div id="nextbtn" style="text-align:right; display:true">
+    {% next_button %}
+</div>
+  
+{% endblock %}

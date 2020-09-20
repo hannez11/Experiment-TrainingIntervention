@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+Main Part
+{% endblock %}
+
+{% block title %}
+Feedback: 
+{% endblock %}
+
+{% block content %}
+<br>
+
+<div class="alert alert-success" role="alert" style="color:black">
+    <strong>Well done. You chose the right answer. </strong>Companies and investors are NOT singularily responsible for the fate of the planet. 
+   </div>
+   <br>
+ 
+<p><strong>Correct answer:</strong></p>
+
+<img src="https://i.imgur.com/eot4Ys3.png" width="825" height="220" style=float:center alt="Error">
+
+   <div id="nextbtn" style="text-align:right; display:true">
+    {% next_button %}
+</div>
+  
+{% endblock %}

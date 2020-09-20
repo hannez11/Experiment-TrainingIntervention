@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+Main Part
+{% endblock %}
+
+{% block title %}
+Feedback: 
+{% endblock %}
+
+{% block content %}
+<br>
+
+<div class="alert alert-success" role="alert" style="color:black">
+    <strong>Well done. You chose the right answer.</strong> External influences and you yourself can cause cognitive biases. <br><br>Please note: The decision-making process can be improved, for example, by increasing the use of System 2. But be careful, a permanent use of System 2 is too exhaustive and therefore, not efficient.
+    
+   </div>
+   <br>
+ 
+<p><strong>Correct answer:</strong></p>
+
+<img src="https://i.imgur.com/1WG69lS.png" width="825" height="220" style=float:center alt="Error">
+
+   <div id="nextbtn" style="text-align:right; display:true">
+    {% next_button %}
+</div>
+  
+{% endblock %}

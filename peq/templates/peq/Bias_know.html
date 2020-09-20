@@ -1,0 +1,67 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+    Main Part
+{% endblock %}
+
+{% block title %}
+Please answer the following questions: 
+{% endblock %}
+
+
+{% block content %}
+
+
+{% for field in form %}
+{% if field.html_name != "tabBiasknow" and field.html_name != "time_Biasknow"  %}
+    <div class="card bg-light m-3">
+        <div class="card-body">
+    
+                <b>{{ field.label }}</b>
+                <hr>
+                {{ field }}
+    
+                {% if field.errors %}
+                <div class="alert alert-danger" role="alert">
+                    {{ field.errors }}
+                </div>
+                {% endif %}
+              </div></div>
+              {% endif %}
+    {% endfor %}
+    </div>
+
+<br>
+
+<div id="nextbtn" style="text-align:right; display:true">
+    {% next_button %}
+</div>
+
+<input type="hidden" name="tabBiasknow" id="tabBiasknow" value=0>
+
+<script>
+          let tab_switch_counter = 0; 
+          $(window).blur(function() {
+            tab_switch_counter ++; 
+            $("#tabBiasknow").val(tab_switch_counter);
+          });
+</script>
+
+<input type="hidden" name="time_Biasknow" id="time_Biasknow" value=0>
+
+<script>
+
+var sec = 0; // global variable
+
+// increasing timer
+function pad ( val ) { return val > 9 ? val : "0" + val; }
+setInterval( function(){
+    $("#seconds").html(pad(++sec));
+    $("#time_Biasknow").val(sec); // store seconds spent on page in hidden field
+}, 1000);
+
+</script>
+
+    
+{% endblock %}

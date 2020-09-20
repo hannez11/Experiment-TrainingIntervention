@@ -1,0 +1,86 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+    Welcome
+{% endblock %}
+
+{% block title %}
+   Experiment instructions
+{% endblock %}
+
+{% block content %}
+
+<p>The experiment consists of <strong>three parts.</strong> Please read the following procedure carefully. You will then receive <u>three comprehension questions.</u> Afterwards you will start the experiment directly as described below.
+</p>
+
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item list-group-item-secondary" align="justify"><strong>Part 1: Lottery task</strong><br>
+        First, you receive a lottery task. Its payout is an additional part of your compensation besides the fixed component of $4.25. You will find a detailed instruction on the corresponding page. All in all, the task is not related to the main part of the experiment.
+        </li>
+</ul>
+  
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item list-group-item-secondary" align="justify"><strong>Part 2: Main part</strong><br>
+        The main part includes four different tasks. The first task is an educational training for which you will be asked a few questions afterwards. The duration is about 15 minutes. Please always pay close attention. In the three tasks that follow, you have to make different decisions. Please note that these three tasks are independent of each other. You will find detailed instructions on the corresponding pages of the experiment. At the end of the main part you receive a few more knowledge questions. 
+        </li>
+</ul>
+
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item list-group-item-secondary" align="justify"><strong>Part 3: Questionnaire</strong><br>
+        At last you should answer questions about your person. There are no right or wrong answers. Therefore, please be honest and read them carefully. Your answers have no influence on your compensation. All data will be treated anonymously by the experiment administration.
+        </li>
+</ul>
+
+<br>
+<br>
+
+<form ... onsubmit="return checkForm(this);">
+  
+  <p><input id="field_terms" onchange="this.setCustomValidity(validity.valueMissing ? 'Please indicate that you understand and accept the abovementioned instructions.' : '');" type="checkbox" required name="terms"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>  I understand and accept the abovementioned instructions.</strong></p>
+  
+  <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"><p align="right"><input type="submit" value="Next"  style="color:white; BACKGROUND-COLOR:rgb(23, 118, 228);"></p></div>
+    </div>
+
+</form>
+  
+  <script>
+  
+    document.getElementById("field_terms").setCustomValidity("Please indicate that you understand and accept the abovementioned instructions.");
+  
+  </script>
+
+<input type="hidden" name="time_wel_ins2" id="time_wel_ins2" value=0>
+
+<script>
+
+var sec = 0; // global variable
+
+// increasing timer
+function pad ( val ) { return val > 9 ? val : "0" + val; }
+setInterval( function(){
+    $("#seconds").html(pad(++sec));
+    $("#time_wel_ins2").val(sec); // store seconds spent on page in hidden field
+}, 1000);
+
+</script>
+
+{% endblock %}

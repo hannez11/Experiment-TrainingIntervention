@@ -1,0 +1,116 @@
+{% extends "global/PageLikert.html" %}
+{% load otree static %}
+{% load listforloopcounter %}
+
+{% block head_title %}
+Main Part
+{% endblock %}
+
+{% block title %}
+Please answer the following question: 
+{% endblock %}
+
+{% block content %}
+
+{% for field in form %}
+
+{% comment %}
+create listforloopcounter.py and __init__.py in peq/templatetags
+https://djangosnippets.org/snippets/2740/
+listforloopcounter has to be loaded {% load listforloopcounter %}
+makes it possible to loop through a list with +=1
+{{ q_label|get_at_index:forloop.counter0 }}
+https://groups.google.com/forum/#!topic/otree/-nhwKYiM5fs
+https://docs.djangoproject.com/en/3.0/howto/custom-template-tags/#registering-custom-filters
+{% endcomment %} 
+
+<br>
+
+
+{% if field.html_name == "qBiasknowledge2b" %}
+<div class="card">
+  <div class="card-header" style="text-align:left;">
+    <label class="statement"><b>{{ field.label }}</b></label> 
+  </div>
+  <div class="card-body">
+      {{ field }}
+      {{ form.qBiasknowledge2b.errors }}
+  </div>
+</div>   
+
+<br>
+
+{% elif field.html_name == "qBiasknowledge3b" %}
+<div id="depends" style="display: none;">
+  <div class="card">
+    
+    
+    {% comment %}check if dynamic label is used via length of var_for_templates. if not, use regular form label{% endcomment %}
+    {% if q_label|length >= 1 %}
+    <div class="card-header" style="text-align:left;">
+      <label class="statement"><b>{{ q_label|get_at_index:forloop.counter0 }}</b></label> 
+    </div>
+    {% else %}
+    <div class="card-header" style="text-align:left;">
+      <label class="statement"><b>{{ field.label }}</b></label> 
+    </div>
+    {% endif %}
+
+      <div class="card-body">
+          <ul class="{{ field.html_name }}" id="questionitem">
+              {% for choice in field %}
+                  {% if forloop.counter == 1 %}
+                  <li>
+                      <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
+                      <label>fully disagree</label>
+                  </li>
+                  {% elif forloop.counter == 7 %}
+                  <li>
+                      <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
+                      <label>fully agree</label>
+                  </li>
+                  {% else %}
+                  <li>
+                      <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
+                      <label>{{ forloop.counter }}</label>
+                  </li>
+                  {% endif %}
+              {% endfor %}
+            </ul>
+      </div>
+  </div>   </div> 
+ 
+
+{% else %}
+<div class="card">
+  <div class="card-body">
+      <b>{{ field.label }}</b> 
+      <br><br>
+      {{ field }}
+  </div>
+</div>   
+    
+{% endif %}
+{% endfor %}
+
+<br>
+
+<div id="nextbtn" style="text-align:right; display:true">
+    {% next_button %}
+</div>
+
+<script>
+  $("input[id='id_qBiasknowledge2b_0']").on( "click", function() {
+  // if($('#id_qBiasknowledge3_1').is(':checked')) { 
+  //   $("#id_qBiasknowledge3_1").prop("checked", false); // automatically select lowest value if prior question == "no"
+  // }
+    $("#depends").show(); // show biasknowledge3 if biasknowledge2 == "yes"
+  });
+
+  $("input[id='id_qBiasknowledge2b_1']").on( "click", function() {
+      $("#depends").hide(); // hide info above table
+      $("#id_qBiasknowledge3b_1").prop("checked", true); // automatically select lowest value if prior question == "no"
+  });
+</script>
+
+{% endblock %}

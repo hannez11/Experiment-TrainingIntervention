@@ -1,0 +1,60 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+  Main Part
+{% endblock %}
+
+{% block title %}
+Subtask 1: Interval estimation
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="alert alert-danger" role="alert" style="color:black">
+  <strong>Unfortunately, at least one of your answers was not correct.  Please read the instructions again.</strong>
+ </div>
+
+ <div class="alert alert-dark" role="alert" align="justify">
+  <strong>In this subtask you should provide a lower and an upper estimate for 10 questions.</strong> You should be 90 percent sure that the correct answer to the question is within the range you indicated. This means that 9 of the 10 intervals you estimate should contain the correct answer. Please enter an integer estimated value without a decimal separator. In addition, pay close attention to the units you are asked for. 
+</div>  
+
+
+  <head>
+    <style>
+    .Buttonunsichtbar{
+    position:absolute;
+    display: none;
+    }
+     
+    .Buttonsichtbar{
+    position:absolute;
+    }
+    </style>
+    <script>
+    function buttonsichtbar(){
+    document.getElementById("Button").className="Buttonsichtbar";
+    }
+    window.setTimeout("buttonsichtbar()", 15000);
+    </script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>            
+            <div class="col-md-1"></div>
+            <div class="col-md-1"><input type="submit" id="Button" value="Next" class="Buttonunsichtbar" style="color:white; BACKGROUND-COLOR:rgb(23, 118, 228);"></div>
+          </div>
+    </body>
+
+{% endblock %}

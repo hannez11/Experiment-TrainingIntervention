@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+Main Part
+{% endblock %}
+
+{% block title %}
+Feedback: 
+{% endblock %}
+
+{% block content %}
+<br>
+
+<div class="alert alert-danger" role="alert" style="color:black">
+    <strong>Unfortunately, your answer is not correct. </strong> State street could save $23 mio. operational costs annually and could avoid 100k tones of carbon through the implementation of various ESG initiatives.  
+
+
+   </div>
+   <br>
+ 
+<p><strong>Correct answer:</strong></p>
+
+<img src="{% static "Bilder Experiment/UV_sec_2_ques2.png" %}" width="825" height="220" style=float:center alt="Error">
+   <div id="nextbtn" style="text-align:right; display:true">
+    {% next_button %}
+</div>
+  
+{% endblock %}

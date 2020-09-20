@@ -1,0 +1,94 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+    Main Part
+{% endblock %}
+
+{% block title %}
+<p align="center">Causes of Cognitive Biases</p>
+{% endblock %}
+
+
+{% block content %}
+
+
+<script>
+  let tab_switch_counter = 0; 
+  $(window).blur(function() {
+    tab_switch_counter ++; 
+    $("#tabVT2").val(tab_switch_counter);
+  });
+</script>
+
+<br> 
+<body oncontextmenu="return false;">
+<div class="text-center">
+<video id="myVideo" width="622" height="350" autoplay disablePictureInPicture>
+    <source src="{% static "Videos1/Video2_2.mp4" %}" type="video/mp4">
+
+  Your browser does not support the video.
+  </video>
+</div>
+</body>
+<br>
+
+<div class="text-center">
+    <button onclick="playVid()" type="button">Play Video</button>  <button onclick="pauseVid()" type="button">Pause Video</button>
+  </div>
+
+<script> 
+    var vid = document.getElementById("myVideo"); 
+    
+    function playVid() { 
+      vid.play(); 
+    } 
+    
+    function pauseVid() { 
+      vid.pause(); 
+    } 
+    </script> 
+
+<br/>
+
+<head>
+    <style>
+    .Buttonunsichtbar{
+    position:absolute;
+    display: none;
+    }
+     
+    .Buttonsichtbar{
+    position:absolute;
+    }
+    </style>
+    <script>
+    function buttonsichtbar(){
+    document.getElementById("Button").className="Buttonsichtbar";
+    }
+    window.setTimeout("buttonsichtbar()", 258500);
+    </script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"><input type="submit" id="Button" value="Next" class="Buttonunsichtbar" style="color:white; BACKGROUND-COLOR:rgb(23, 118, 228);"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+          </div>
+    </body>
+
+
+    <input type="hidden" name="tabVT2" id="tabVT2" value=0>
+
+
+
+{% endblock %}

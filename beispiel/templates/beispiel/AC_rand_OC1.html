@@ -1,0 +1,114 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+    Main Part
+{% endblock %}
+
+{% block title %}
+<div id="dreher"><br>
+    <div class="row">
+        <div class="col-md-1"><html>
+            <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>
+            .loader {
+              border: 8px solid #f3f3f3;
+              border-radius: 50%;
+              border-top: 8px solid #27b3b3;
+              width: 35px;
+              height: 35px;
+              -webkit-animation: spin 2s linear infinite; /* Safari */
+              animation: spin 2s linear infinite;
+            }
+            
+            /* Safari */
+            @-webkit-keyframes spin {
+              0% { -webkit-transform: rotate(0deg); }
+              100% { -webkit-transform: rotate(360deg); }
+            }
+            
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+            </style>
+            </head>
+            <body>
+            
+            <div class="loader"></div>
+            
+            </body>
+            </html>            </div>
+        <div class="col-md-8"> <p style="font-size:23px">Random selection of a task..</p></div>
+        <div class="col-md-1"></div>
+          </div></div> 
+<script>
+setInterval(function(){ $("#dreher").hide(); }, 3000); 
+</script>
+{% endblock %}
+
+
+{% block content %}
+	
+    <div id="myDiv" style="display:none"> <br><div class="col-12 alert alert-info" role="alert" style="color:black">
+        <strong>You were asked to estimate a 90% interval for the question listed below. Please note that you should justify your answer on the following page as announced. Your given answer was:</strong>
+       </div> 
+       
+<div class="row">
+    <div class="col-6 no select">
+    <pr class="noselect" style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u></pr>
+    </div>
+    <div class="col-6">
+      <center>
+      <table>
+          <tr>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td style="font-size:18px"><strong>&nbsp;&nbsp;lower <br>estimate</strong></td>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td style="font-size:18px"><strong>&nbsp;&nbsp;upper <br>estimate</strong></td>
+          </tr>
+          <br>
+          </tr>
+      </table>
+      </center>
+    </div>
+  </div>
+  <br>
+ 
+  <div class="row">
+
+    <div class="col-6 list-group-item list-group-item-secondary no select" style="color:black">
+    1. How many gold medals were won by European countries at the Olympic Summer Games in Rio 2016 <u>in total?</u>
+    </div>
+    <div class="col-6">
+      <center>
+      <table>
+          <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td><span style="color:rgb(51, 172, 155)"><strong>Your answer: {{ player.OC1_low }} </strong></span></td>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td><span style="color:rgb(51, 172, 155)"><strong>Your answer: {{ player.OC1_high }} </td>
+          </tr>
+          <br>
+          </tr>
+      </table>
+      </center>
+    </div>
+  </div>
+<br>
+  <div id="nextbtn" style="text-align:right; display:true">
+    {% next_button %}
+</div>
+    </div> 
+    <script>
+    setTimeout(function(){ $("#myDiv").show(); }, 3000); 
+    </script>
+
+
+
+
+
+{% endblock %}

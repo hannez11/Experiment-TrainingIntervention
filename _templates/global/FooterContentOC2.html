@@ -1,0 +1,45 @@
+{% load otree static %}
+
+{% block content %}
+
+<br><br>
+<hr>
+      <div class="container" style="width: 35%;">
+          <div class="row" style="text-align: center; background-color: #fff;">
+        
+            <div class="col-sm">
+              <button type="button" id="instructionsbtn" class="btn btn-light btn-sm" data-toggle="modal" data-target="#instructions" style="border: 1px solid #a7a7a7">Instructions subtask 2</button>
+            </div>
+        
+          </div>
+      </div>
+
+    <!-- instructions -->
+    <div class="modal fade" id="instructions" tabindex="-1" role="dialog" aria-labelledby="instructionsLabel" aria-hidden="true">
+      <div class="modal-dialog modalw">
+          <div class="modal-content">
+
+              <div class="modal-header">
+                   <h4 class="modal-title" id="instructionsLabel">Instructions subtask 2</h4>
+              </div>
+
+              <div class="modal-body">
+                <!-- see _templates/global/InstructionsTemplate.html -->
+                <p><ul class="list-group">
+                  <li class="list-group-item list-group-item-secondary" align="justify">
+                    <strong>Based on subtask 1: Interval estimation</strong> <br>We would like to know, how you evaluate your estimation performance compared to the other experiment participants (mTurk workers who also passed the eligibility checks). Not all perform equally well. Some participants estimate better than others, which means that the true value is more often included in their confidence intervals. As you can imagine, there will be a best and a worst participant. Try to indicate your position in the experimental group. Please be as accurate as possible, even if you are not aware of the estimation skills of the other participants. Please note that the higher the value you indicate, the better you estimate your position within the experimental group. 
+              </ul>
+                
+              <br>
+             
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default mr-auto" data-dismiss="modal">Close</button>
+              </div>
+
+          </div>
+      </div>
+    </div>
+
+{% endblock %}
+
+

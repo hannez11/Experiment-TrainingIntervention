@@ -1,0 +1,58 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+    Main Part
+{% endblock %}
+
+{% block title %}
+Task overview
+{% endblock %}
+
+
+{% block content %}
+
+<br>
+    <div class="card" style="width: 35rem;"">
+      <div class="list-group-item list-group-item-dark">
+          <strong>In the following three tasks you have to make different decisions.</strong></div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Please note that these three tasks are independent of each other.  </li>
+        <li class="list-group-item">Your answers are confidential and cannot be traced back to you.</br></li>
+        <li class="list-group-item">  Please always read carefully and answer conscientiously.</br></li>
+      </ul>
+    </div>
+
+    <br>
+    <br>
+
+    <form ... onsubmit="return checkForm(this);">
+  
+        <p><input id="field_terms" onchange="this.setCustomValidity(validity.valueMissing ? 'Please indicate that you understand and accept the abovementioned instructions.' : '');" type="checkbox" required name="terms"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>  I understand and accept the abovementioned instructions.</strong></p>
+        
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"><p align="right"><input type="submit" value="Next"  style="color:white; BACKGROUND-COLOR:rgb(23, 118, 228);"></p></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+          </div>
+      
+      </form>
+        
+        <script>
+        
+          document.getElementById("field_terms").setCustomValidity("Please indicate that you understand and accept the abovementioned instructions.");
+        
+        </script>
+
+
+
+{% endblock %}

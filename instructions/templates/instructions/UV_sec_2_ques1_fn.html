@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+Main Part
+{% endblock %}
+
+{% block title %}
+Feedback: 
+{% endblock %}
+
+{% block content %}
+<br>
+
+<div class="alert alert-danger" role="alert" style="color:black">
+    <strong>Unfortunately, that is wrong.</strong> ESG is the abbreviation for environmental, social and governance.
+
+   </div>
+   <br>
+ 
+<p><strong>Correct answer:</strong></p>
+
+<img src="https://i.imgur.com/o5KYr8a.png" width="825" height="220" style=float:center alt="Error">
+
+   <div id="nextbtn" style="text-align:right; display:true">
+    {% next_button %}
+</div>
+  
+{% endblock %}

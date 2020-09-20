@@ -1,0 +1,73 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+    Main Part
+{% endblock %}
+
+{% block title %}
+Task overview
+{% endblock %}
+
+
+{% block content %}
+
+    <br>
+    <div class="card">
+      <div class="list-group-item list-group-item-dark">
+          <strong>In the following three tasks you have to make different decisions.</strong></div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Please note that these three tasks are independent of each other.  </li>
+        <li class="list-group-item">After completing, you have to <strong>justify one of your given decisions</strong> to a randomly chosen question out of the three tasks in detail.</br></li>
+        <li class="list-group-item list-group-item-info" style="color:black">  Therefore, you must be able to list reasons why you decided this way. <strong> Please note that the focus should be on the decision-making process and not on its outcome.</strong> This means that you have to be able to explain your thoughts on how you derived at your decisions. Your evaluation will be based on the use of effective decision strategies.  </br></li>
+        <li class="list-group-item">  After completing this HIT, some participants will be additionally contacted by e-mail to clarify their justification. In order to guarantee anonymity, the contact is mediated by an independent third person.</br></li>
+      </ul>
+    </div>
+
+    <br>
+    <br>
+
+    
+<form ... onsubmit="return checkForm(this);">
+  
+        <p><input id="field_terms" onchange="this.setCustomValidity(validity.valueMissing ? 'Please indicate that you understand and accept the abovementioned instructions.' : '');" type="checkbox" required name="terms"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>  I understand and accept the abovementioned instructions.</strong></p>
+        
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"><p align="right"><input type="submit" value="Next"  style="color:white; BACKGROUND-COLOR:rgb(23, 118, 228);"></p></div>
+          </div>
+      
+    </form>
+        
+    <script>
+        
+          document.getElementById("field_terms").setCustomValidity("Please indicate that you understand and accept the abovementioned instructions.");
+        
+    </script>
+
+<input type="hidden" name="time_ACyes" id="time_ACyes" value=0>
+
+<script>
+
+var sec = 0; // global variable
+
+// increasing timer
+function pad ( val ) { return val > 9 ? val : "0" + val; }
+setInterval( function(){
+    $("#seconds").html(pad(++sec));
+    $("#time_ACyes").val(sec); // store seconds spent on page in hidden field
+}, 1000);
+
+</script>
+
+{% endblock %}

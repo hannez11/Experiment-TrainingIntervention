@@ -1,0 +1,72 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+    Main Part
+{% endblock %}
+
+{% block title %}
+<p align="center">Food for thought</p>
+{% endblock %}
+
+
+{% block content %}
+
+<br> 
+<body oncontextmenu="return false;">
+  <center>
+  <iframe disablepictureinpicture controlslist="nodownload" width="570" height="320" src="https://www.youtube-nocookie.com/embed/_Vs0gGvDlwM?controls=0&disablekb=1&rel=0&enablejsapi&autoplay=1" frameborder=0 ></iframe>
+  </center>
+  <br> 
+  </body>
+<br>
+
+
+<br/>
+
+<head>
+    <style>
+    .Buttonunsichtbar{
+    position:absolute;
+    display: none;
+    }
+     
+    .Buttonsichtbar{
+    position:absolute;
+    }
+    </style>
+    <script>
+    function buttonsichtbar(){
+    document.getElementById("Button").className="Buttonsichtbar";
+    }
+    window.setTimeout("buttonsichtbar()", 86500);
+    </script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"><input type="submit" id="Button" value="Next" class="Buttonunsichtbar" style="color:white; BACKGROUND-COLOR:rgb(23, 118, 228);"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+          </div>
+    </body>
+
+    <input type="hidden" name="tabVT4" id="tabVT4" value=0>
+
+<script>
+      let tab_switch_counter = 0; 
+      $(window).blur(function() {
+        tab_switch_counter ++; 
+        $("#tabVT4").val(tab_switch_counter);
+      });
+</script>
+
+{% endblock %}

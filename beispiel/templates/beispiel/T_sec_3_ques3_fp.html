@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+Main Part
+{% endblock %}
+
+{% block title %}
+Feedback: 
+{% endblock %}
+
+{% block content %}
+<br>
+
+<div class="alert alert-success" role="alert" style="color:black">
+    <strong>Very good.</strong> But of course you will receive feedback about the actual answer. The use of System 1 is not efficient in a cost-benefit-analysis, as it represents a more complex task. 
+   </div>
+   <br>
+ 
+<p><strong>If you did not have to choose the second answer, the correct answer would be:</strong></p>
+
+<img src="{% static "Bilder Experiment/T_sec_3_quest3_neu.png" %}" width="825" height="220" style=float:center alt="Error">
+
+
+   <div id="nextbtn" style="text-align:right; display:true">
+    {% next_button %}
+</div>
+  
+{% endblock %}

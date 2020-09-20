@@ -1,0 +1,45 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+  Main Part
+{% endblock %}
+
+{% block title %}
+Task {{ roundnumber }}: General estimation question
+{% endblock %}
+
+
+
+
+{% block content %}
+<br>
+
+<div class="card" style="width: 40rem;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item list-group-item-secondary"><strong>The following task is a general estimation task.</strong></li>
+    <li class="list-group-item"> On the next page a picture is presented to you.</li>
+    <li class="list-group-item">Please answer the question related to the picture.</li>
+  </ul>
+</div>
+
+<br>
+<br>
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1" id="nextbtn" style="text-align:right; display:true">
+    {% next_button %}
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+    Welcome
+{% endblock %}
+
+{% block title %}
+   Please answer the following question:
+{% endblock %}
+
+
+{% block content %}
+
+<br> 
+
+<body oncontextmenu="return false;">
+<div class="text-center">
+<video id="myVideo" width="444" height="250" autoplay>
+    <source src="{% static "Videos1/Verständnisfrage.mp4" %}" type="video/mp4">
+
+  Your browser does not support the video.
+  </video>
+</div>
+</body>
+<br>
+
+  <div class="text-center">
+    <button onclick="playVid()" type="button">Play Video</button>  <button onclick="pauseVid()" type="button">Pause Video</button>
+  </div>
+
+<script> 
+    var vid = document.getElementById("myVideo"); 
+    
+    function playVid() { 
+      vid.play(); 
+    } 
+    
+    function pauseVid() { 
+      vid.pause(); 
+    } 
+    </script> 
+
+<br/>
+
+{% for field in form %}
+<!-- otherwise timerfield is also displayed -->
+<div class="card bg-light m-3">
+    <div class="card-body">
+
+            <b>{{ field.label }}</b>
+            <hr>
+            {{ field }}
+
+            {% if field.errors %}
+            <div class="alert alert-danger" role="alert">
+                {{ field.errors }}
+            </div>
+            {% endif %}
+          </div></div>
+{% endfor %}
+</div>
+<br>
+
+<div id="nextbtn" style="text-align:right; display:true">
+  {% next_button %}
+</div>
+
+{% endblock %}

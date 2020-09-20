@@ -1,0 +1,95 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+    Welcome
+{% endblock %}
+
+{% block title %}
+   Experiment instructions
+{% endblock %}
+
+{% block content %}
+
+
+<br>
+
+<div class="card" style="width: 53rem;"">
+    <div class="list-group-item list-group-item-dark">
+        <font size="4"> <strong>Welcome to the experiment! <br>Thank you very much for your participation.</br></strong> </font>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">This experiment is conducted by the Justus-Liebig-Universität Gießen. Your answers will be treated completely anonymously. The experiment administration cannot draw any conclusions about you as a person.  </li>
+      <li class="list-group-item">Please read all instructions and tasks carefully. Within the experiment several attention checks are asked. If it becomes apparent that you have often worked inattentively, you will not be compensated.</br></li>
+      <li class="list-group-item"> The duration of this HIT is about 40 minutes. Since the experiment can include acoustic and optical elements, please make sure that your computer is able to display them.</br></li>
+      <li class="list-group-item">This HIT is rewarded with a total of approximately $5.00. Overall the compensation comprises a fixed and a lottery component. If you end the experiment before completion, you will not receive any compensation.</li>
+      <li class="list-group-item">There are no risks associated with participating in this HIT. This is a managerial instead of a psychological experiment. Therefore, you will not be fooled at any time.  </br></li>
+      <li class="list-group-item">In the following you have to answer questions to verify that you meet the necessary qualifications to participate in the experiment. If you have questions about the experiment, please feel free to contact us.</li>
+    </ul>
+  </div>
+
+  <br>
+  <br>
+
+ 
+  <form ... onsubmit="return checkForm(this);">
+    
+    <p><input id="field_terms" onchange="this.setCustomValidity(validity.valueMissing ? 'Please indicate that you understand and accept the abovementioned instructions.' : '');" type="checkbox" required name="terms"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>  I understand and accept the abovementioned instructions.</strong></p>
+    
+ 
+
+</form>
+    
+    <script>
+    
+      document.getElementById("field_terms").setCustomValidity("Please indicate that you understand and accept the abovementioned instructions.");
+    
+    </script>
+
+<input type="hidden" name="timezone" id="timezone" value=0>
+
+<script> 
+  var date = new Date();  
+  var diff = date.getTimezoneOffset();  
+ $("#timezone").val(diff);
+</script> 
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  div.next {
+  background-color: white;
+  color: white;
+}
+
+@media screen and (max-width: 770px) {
+  div.next {
+    display: none;
+  }
+}
+
+@-moz-document url-prefix() {
+      div.next {
+        display: none;
+  }
+}
+</style>
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-1"></div>
+  <div class="next"><p align="right">
+    <input type="submit" value="Next"  style="color:white; BACKGROUND-COLOR:rgb(23, 118, 228);"></p></div>
+  <div class="col-md-1"></div>
+    </div>
+
+
+  {% endblock %}

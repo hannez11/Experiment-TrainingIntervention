@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+Main Part
+{% endblock %}
+
+{% block title %}
+Feedback: 
+{% endblock %}
+
+{% block content %}
+<br>
+
+<div class="alert alert-info" role="alert" style="color:black">
+    Perfect, but let's take a quick look at the basics anyway. Maybe your existing knowledge can be refreshed or even extended. 
+   </div>
+   <br>
+ 
+   <div id="nextbtn" style="text-align:right; display:true">
+    {% next_button %}
+</div>
+  
+{% endblock %}

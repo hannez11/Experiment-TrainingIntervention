@@ -1,0 +1,77 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+Questionnaire
+{% endblock %}
+
+
+{% block content %}
+<p style="font-size:25px"><strong>Thank you very much for your answers. <br>In the following you will find information about your compensation.</strong></p>
+
+<br>
+<div id="dreher" class="row">
+    <div class="col-md-1"><html>
+        <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        .loader {
+          border: 10px solid #f3f3f3;
+          border-radius: 50%;
+          border-top: 10px solid #277bb3;
+          width: 60px;
+          height: 60px;
+          -webkit-animation: spin 2s linear infinite; /* Safari */
+          animation: spin 2s linear infinite;
+        }
+        
+        /* Safari */
+        @-webkit-keyframes spin {
+          0% { -webkit-transform: rotate(0deg); }
+          100% { -webkit-transform: rotate(360deg); }
+        }
+        
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        </style>
+        </head>
+        <body>
+        
+        <div class="loader"></div>
+        
+        </body>
+        </html>            </div>
+    <div class="col-md-8"> <p style="font-size:33px">Lottery drawing...</p></div>
+    <div class="col-md-1"></div>
+      </div>
+
+
+    <br/>
+
+            <br>
+            <div id= "myDiv" style="display:none"  class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-1"></div>
+                <div class="col-md-1"></div>
+                <div class="col-md-1"></div>
+                <div class="col-md-1"></div>
+                <div class="col-md-1"></div>
+                <div class="col-md-1"></div>
+                <div class="col-md-1"></div>
+                <div class="col-md-1"></div>
+                <div class="col-md-1"></div>
+                <div class="col-md-1"><input type="submit" id="Button" value="Next" class="Buttonunsichtbar" style="color:white; BACKGROUND-COLOR:rgb(23, 118, 228);"></div>
+              </div>
+        </body>
+ 
+      <script>
+      setInterval(function(){ $("#dreher").hide(); }, 3000); 
+      </script>       
+
+<script>
+  setTimeout(function(){ $("#myDiv").show(); }, 3000); 
+  </script>
+
+{% endblock %}

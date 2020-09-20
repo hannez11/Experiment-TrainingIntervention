@@ -1,0 +1,133 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+    Main Part
+{% endblock %}
+
+{% block title %}
+   Daily examples of Cognitive Biases
+{% endblock %}
+
+{% block content %}
+
+<br>
+
+<div class="row">
+<div class="col-8 alert alert-dark" role="alert" align="justify">
+  Again, thank you for submitting your answers. <br><br>Now let’s see whether you recognize yourself in one of the following daily examples. Let’s start with a casual conversation between two friends: 
+ </div>
+ <style>
+  img.AminaOC {
+   transition: transform 0.2s;
+   position: absolute;
+   z-index: 2;
+  }
+  img.AminaOC:hover {
+   transform: scale(2, 2);
+  }
+  </style>
+ <div class="col-sm-4" ><img src="{% static "Bilder Experiment/AminaOCa.png" %}" class="AminaOC" width="310" height="120"  alt="Error"></div>
+</div>
+
+<div class="row">
+<div class="alert alert-dark" role="alert" align="justify" class="pull-left"> 
+    <strong>Woman:</strong> “I heard that your company wants to pay a bonus to the top 50% of its employees. Do you think you'll get the bonus?” <br><br>
+      <span style="color:white"><strong>Woman:</strong></span> “Yes, I'm very certain that I will receive the bonus. I would say that I'm doing a very good job. Besides, I see myself as one of the top performers of the company for quite some time now.” <br><br><strong>Woman:</strong> “Oh, I don't want to disagree but off the top of my head I could already list a few of your colleagues who also deserve the bonus. For example, Paul and Melina have been working extremely long hours over the last few months and it is rumored that Lennard has been proposed by the board for the bonus. In addition, there are certainly some good people in other departments too.” <br> <br> <span style="color:white"><strong>Woman:</strong></span> “No, I don’t think so. I am ambitious and I didn’t receive any negative feedback so far. I definitely deserve the bonus.” <br><br><strong>Woman:</strong>“I am certain that you are a good worker. However, have you ever thought about the opposite? Are there any reasons why you shouldn't get the bonus?”  <br><br>
+      <span style="color:white"><strong>Woman:</strong></span> “Stop being so pessimistic and better toast to my extra money.”</div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8 alert alert-dark role="alert" align="justify">Wow, pretty sure of herself this young lady on the right. Did you notice how confident she is that she is going to receive the bonus? Her decision is based entirely on the intuitive suggestion of her System 1. She has not even considered anyone but herself to be awarded. It seems as if she is too convinced of herself. Besides, the friend's advice shows us that other colleagues are as well suited for the bonus. The young lady also rejects the possibility of activating the reflective System 2 by thinking about reasons why she should not get it. Optimistically and without much thought, she assumes that she is better than average.
+    </div>
+    <style>
+      img.OCreas {
+       transition: transform 0.2s;
+       position: absolute;
+       z-index: 1;
+      }
+      img.OCreas:hover {
+       transform: scale(1.5, 1.5);
+      }
+      </style>
+    <div class="col-sm-4"><img src="{% static "Bilder Experiment/OCreas.png" %}" class="OCreas" width="310" height="217" style=float:right alt="Error"></div>
+  </div>
+
+  <div class="row">
+    <style>
+      img.better {
+       transition: transform 0.2s;
+       position: absolute;
+       z-index: 3;
+      }
+      img.better:hover {
+       transform: scale(1.5, 1.5);
+      }
+      </style>
+      <div class="col-sm-4"><img src="{% static "Bilder Experiment/better.png" %}" class="better" width="295" height="170" style=float:left alt="Error"></div>
+      <div class="col-sm-8 alert alert-dark role="alert" align="justify"> Now imagine what would happen if we asked all her colleagues about their individual chances to get the bonus. What do you think they would answer? Studies have found that typically more than half of the people consider their performance as better than average. However, statistically this is obviously not possible and shows that some people intuitively overestimate themselves, their capabilities or even their judgements. This is a typical cognitive bias. 
+      </div>
+    </div>  
+
+
+<head>
+    <style>
+    .Buttonunsichtbar{
+    position:absolute;
+    display: none;
+    }
+     
+    .Buttonsichtbar{
+    position:absolute;
+    }
+    </style>
+    <script>
+    function buttonsichtbar(){
+    document.getElementById("Button").className="Buttonsichtbar";
+    }
+    window.setTimeout("buttonsichtbar()", 50000);
+    </script>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1"></div>            
+            <div class="col-md-1"></div>
+            <div class="col-md-1"><input type="submit" id="Button" value="Next" class="Buttonunsichtbar" style="color:white; BACKGROUND-COLOR:rgb(23, 118, 228);"></div>
+          </div>
+    </body>
+
+    <input type="hidden" name="time_TT_sec_3_1" id="time_TT_sec_3_1" value=0>
+
+    <script>
+    
+      var sec = 0; // global variable
+      
+      // increasing timer
+      function pad ( val ) { return val > 9 ? val : "0" + val; }
+      setInterval( function(){
+          $("#seconds").html(pad(++sec));
+          $("#time_TT_sec_3_1").val(sec); // store seconds spent on page in hidden field
+      }, 1000);
+      
+      </script>
+  
+  <input type="hidden" name="tabTTsec31" id="tabTTsec31" value=0>
+  
+  <script>
+            let tab_switch_counter = 0; 
+            $(window).blur(function() {
+              tab_switch_counter ++; 
+              $("#tabTTsec31").val(tab_switch_counter);
+            });
+  </script>
+
+{% endblock %}

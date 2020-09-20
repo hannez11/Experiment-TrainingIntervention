@@ -1,0 +1,94 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+    END
+{% endblock %}
+
+
+{% block title %}
+Thank you very much for participating in the experiment. 
+{% endblock %}
+
+{% block content %}
+<div class="alert alert-info" role="alert" style="color:black" style="font-size:18px">
+  We hope you had at least little fun and that you will apply, what you learned today, in your everyday life. <br>The table below shows the results from the lottery task. At the end of the page you can see your total compensation.
+ </div>
+
+<br>
+<div id="payout" style="display:true;">
+    <p style="font-size:25px" >Information about the lottery:</p><hr>
+    <table class="table table-striped">
+      <tbody>
+        {% if participant.vars.global_lottery_choice == 16 %}
+        <tr>
+          <th scope="row">You have chosen to always participate in the lottery</th>
+          <td style="text-align: center;"></td>
+        </tr>
+        {% else %}
+        <tr>
+          <th scope="row">You have chosen to switch from
+            following scenario to the safe payment: </th>
+            <td style="text-align: center;">{{ participant.vars.global_lottery_choice }}</td>
+          </tr>
+        {% endif %}
+        <tr>
+          <th scope="row">The following scenario was randomly drawn:</th>
+          <td style="text-align: center;">{{ player.lottery_draft }}</td>
+        </tr>
+        {% if participant.vars.global_lottery_choice > player.lottery_draft and player.lottery_outcome <= scsrate %}
+        <tr>
+          <th scope="row">You participate in the lottery.</th>
+          <td style="text-align: center;">You have won!</td>
+        </tr>
+        <tr>
+          <th scope="row">You will receive the following compensation for the lottery task:</th>
+          <td style="text-align: center;">{{ Constants.lottery_success|c }}</td>
+        </tr>
+        {% elif participant.vars.global_lottery_choice > player.lottery_draft and player.lottery_outcome > scsrate %}
+        <tr>
+          <th scope="row">You participate in the lottery.</th>
+          <td style="text-align: center;"> You have lost.</td>
+        </tr>
+        <tr>
+          <th scope="row">You will receive the following compensation for the lottery task:</th>
+          <td style="text-align: center;">{{ Constants.lottery_failure|c }}</td>
+        </tr>
+        {% else %}
+        </tr>
+            <th scope="row">You are not participating in the lottery. You will receive the safe payment.</th>
+            <td style="text-align: center;">{{ Constants.lottery_safe|c }}</td>
+        {% endif %}
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<br>
+<br>
+
+<p style="font-size:25px">
+  Total compensation:
+ </p><hr>
+ <ul class="list-group list-group-flush">
+  <li class="list-group-item list-group-item-warning" style="color:black">{% if participant.vars.global_lottery_choice > player.lottery_draft and player.lottery_outcome <= scsrate %}
+    <div>
+      <strong>Fixed component ($4.25) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lottery payout ({{ Constants.lottery_success|c }}) = &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$5.75</strong>
+     </div>
+     {% elif participant.vars.global_lottery_choice > player.lottery_draft and player.lottery_outcome > scsrate %}
+     <div>
+      <strong>Fixed component ($4.25) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lottery payout ({{ Constants.lottery_failure|c }}) = &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$4.25</strong>
+     </div>
+    {% else %}
+    <div>
+      <strong>Fixed component ($4.25) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;safe payment ({{ Constants.lottery_safe|c }}) = &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$5.00</strong>
+     </div>
+    {% endif %}</li>
+</ul>
+
+<br>
+
+  <div id="nextbtn" style="text-align:right; display:true">
+    {% next_button %}
+</div>
+
+{% endblock %}
