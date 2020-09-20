@@ -19,7 +19,7 @@ You have completed the training.
 <br>
 
 {% for field in form %}
-  {% if field.html_name == "Train_ManCheckVT" %}
+  {% if field.html_name == "Train_ManCheckUT" %}
 <div class="card bg-light m-3">
     <div class="card-body">
 
@@ -40,7 +40,7 @@ You have completed the training.
 
 {% for field in form %}
 {% if field.html_name != "Ment_Eff" %}
-{% if field.html_name != "Train_ManCheckVT" %}
+{% if field.html_name != "Train_ManCheckUT" %}
 <div class="card">
   
   {% comment %}check if dynamic label is used via length of var_for_templates. if not, use regular form label{% endcomment %}

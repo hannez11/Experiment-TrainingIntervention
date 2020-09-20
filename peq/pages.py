@@ -72,7 +72,7 @@ class end(Page):
 
 
 
-page_sequence = [CRT, Bias_know_UV, Bias_know, PEQ_ov, PEQ_1, PEQ_2, PEQ_3, PEQ_4, PEQ_person, end_vorbereitung, PayoutLottery, end]
+page_sequence = [CRT,Bias_know,  Bias_know_UV, PEQ_ov, PEQ_1, PEQ_2, PEQ_3, PEQ_4, PEQ_person, end_vorbereitung, PayoutLottery, end]
 # page_sequence = [CRT, Bias_know_UV, Bias_know, PEQ_ov, PEQ_1, PEQ_2, PEQ_3, PEQ_4, PEQ_person, end_vorbereitung, PayoutLottery, end]
 
 #CRT, Bias_know_UV, Bias_know, PEQ_ov, PEQ_1, PEQ_2, PEQ_3, PEQ_4, PEQ_person, end_vorbereitung, PayoutLottery, end
