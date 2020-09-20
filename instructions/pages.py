@@ -356,14 +356,14 @@ class PEQ_trainVT(Page):
 
 class PEQ_trainTT(Page):
     form_model = "player"
-    form_fields = ["Intr_Mot1TT", "Intr_Mot2TT", "Intr_Mot3", "Mod1", "Mod2", "Cogn_Lo1", "Cogn_Lo2", "Cogn_Lo3", "Cogn_Lo4", "Ment_Eff", "Train_ManCheck"]
+    form_fields = ["Intr_Mot1TT", "Intr_Mot2TT", "Intr_Mot3", "Mod1", "Mod2", "Cogn_Lo1", "Cogn_Lo2", "Cogn_Lo3", "Cogn_Lo4", "Ment_Eff", "Train_ManCheckTT"]
 
     def is_displayed(self):
         return self.subsession.training == "TT"
 
 class PEQ_trainUT(Page):
     form_model = "player"
-    form_fields = ["Intr_Mot1VT", "Intr_Mot2VT", "Intr_Mot3", "Mod1", "Mod2", "Cogn_Lo1", "Cogn_Lo2", "Cogn_Lo3", "Cogn_Lo4", "Ment_Eff", "Train_ManCheck"]
+    form_fields = ["Intr_Mot1VT", "Intr_Mot2VT", "Intr_Mot3", "Mod1", "Mod2", "Cogn_Lo1", "Cogn_Lo2", "Cogn_Lo3", "Cogn_Lo4", "Ment_Eff", "Train_ManCheckUT"]
 
     def is_displayed(self):
         return self.subsession.training == "UT"
