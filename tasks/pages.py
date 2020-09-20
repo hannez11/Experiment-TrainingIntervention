@@ -182,7 +182,7 @@ class AC_just(Page):
 
 
 
-page_sequence = [EoC_ov]
+page_sequence = [EoC_ov, EoC_instructions, EoC_comp1, EoC_task, OC_ov, OC_comp1, OC_instruction1, OC_comp1_2, OC_task1, OC_comp2, OC_instruction2, OC_comp2_2, OC_task2, Anchor_ov, Anchor_task, AC_rand_EoC, AC_rand_Anchor, AC_rand_OC1, AC_rand_OC2, AC_just]
 #page_sequence = [EoC_ov, EoC_instructions, EoC_comp1, EoC_task, OC_ov, OC_comp1, OC_instruction1, OC_comp1_2, OC_task1, OC_comp2, OC_instruction2, OC_comp2_2, OC_task2, Anchor_ov, Anchor_task, AC_rand_EoC, AC_rand_Anchor, AC_rand_OC1, AC_rand_OC2, AC_just]
 
 
