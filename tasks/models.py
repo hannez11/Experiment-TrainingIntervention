@@ -127,11 +127,11 @@ class Player(BasePlayer):
 
     OC_comp1_quest3b=create_mc("What is an example of the correct input spelling?", [[1, "50,743"], [2, "10.3"], [3, "2,300.72"], [4, "5463"]])
 
-    OC_comp2_quest1=create_mc("To whom should you compare your estimation skills from the previous subtask.", [[1, "to other experiment participants"], [2,"to no one"], [3, "to the American population"], [4, "to the worst participant"]])
+    OC_comp2_quest1=create_mc("To whom should you compare your estimation performance from the previous subtask.", [[1, "to other experiment participants"], [2,"to no one"], [3, "to the American population"], [4, "to the worst participant"]])
 
     OC_comp2_quest2=create_mc("The lower the value, the better you estimate your position.", [[1,"True"], [2, "False"]])
 
-    OC_comp2_quest1b=create_mc("To whom should you compare your estimation skills from the previous subtask.", [[1, "to other experiment participants"], [2,"to no one"], [3, "to the American population"], [4, "to the worst participant"]])
+    OC_comp2_quest1b=create_mc("To whom should you compare your estimation performance from the previous subtask.", [[1, "to other experiment participants"], [2,"to no one"], [3, "to the American population"], [4, "to the worst participant"]])
 
     OC_comp2_quest2b=create_mc("The lower the value, the better you estimate your position.", [[1,"True"], [2, "False"]])
 

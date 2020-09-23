@@ -115,13 +115,13 @@ class Player(BasePlayer):
 
     UVsec3_quest3=create_mc("According to CalPERS, long-term value creation requires the effective management of which forms of capital? Please choose the second answer regardless of the question.", [[1, "Spiritual, natural and philosophical"], [2, "Historical, social and cultural "], [3, "Fashionable, geographical and political "], [4, "Financial, human and physical"]])
 
-    Intr_Mot1VT=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="Watching the video was enjoyable.")
+    Intr_Mot1VT=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="The training was enjoyable.")
 
-    Intr_Mot1TT=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="Reading the text was enjoyable.")
+    Intr_Mot1TT=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="The training was enjoyable.")
 
-    Intr_Mot2VT=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="The video was interesting.")
+    Intr_Mot2VT=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="The training was interesting.")
     
-    Intr_Mot2TT=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="The text was interesting.")
+    Intr_Mot2TT=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="The training interesting.")
     
 
     Mod1=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="The presence of the moderator in the training enhanced my learning process.")

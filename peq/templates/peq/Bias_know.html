@@ -12,6 +12,11 @@ Please answer the following questions:
 
 {% block content %}
 
+<div class="col-12 alert alert-info" role="alert" style="color:black">
+    The following questions refer to the dual system theory. Please do not look up the answers on the internet. 
+   </div> 
+
+<br>
 
 {% for field in form %}
 {% if field.html_name != "tabBiasknow" and field.html_name != "time_Biasknow"  %}
