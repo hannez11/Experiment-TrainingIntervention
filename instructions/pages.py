@@ -44,6 +44,10 @@ class Comprehension(Page):
          if value!=2:
              return "Your answer is not correct. Please read the experiment instructions again."
 
+class PEQ_vortrain(Page):
+    form_model = "player"
+    form_fields = ["Estima", "Mood", "DuCha_1", "Analy"] 
+
 class Lottery_ins(Page):
     form_model = "player"
     form_fields = ["time_Lottery_ins"]
@@ -245,11 +249,11 @@ class T_sec_3_ques1(Page):
 
 class T_sec_3_ques1_fn(Page):
     def is_displayed(self):
-        return self.player.Tsec3_quest1!=4 and self.subsession.training != "UT"
+        return self.player.Tsec3_quest1!=2 and self.subsession.training != "UT"
 
 class T_sec_3_ques1_fp(Page):
     def is_displayed(self):
-        return self.player.Tsec3_quest1==4 and self.subsession.training != "UT"
+        return self.player.Tsec3_quest1==2 and self.subsession.training != "UT"
 
 class T_sec_3_ques2(Page):
     form_model = "player"
@@ -349,21 +353,21 @@ class UV_sec_4(Page):
 
 class PEQ_trainVT(Page):
     form_model = "player"
-    form_fields = ["Intr_Mot1VT", "Intr_Mot2VT", "Intr_Mot3", "Mod1", "Mod2", "Cogn_Lo1", "Cogn_Lo2", "Cogn_Lo3", "Cogn_Lo4", "Ment_Eff", "Train_ManCheckVT"]
+    form_fields = ["Intr_Mot1VT", "Intr_Mot2VT", "Mod1", "Mod2", "Pace","Cogn_Lo1", "Cogn_Lo2", "Cogn_Lo3", "Cogn_Lo4", "Ment_Eff", "Train_ManCheckVT"]
 
     def is_displayed(self):
         return self.subsession.training == "VT"
 
 class PEQ_trainTT(Page):
     form_model = "player"
-    form_fields = ["Intr_Mot1TT", "Intr_Mot2TT", "Intr_Mot3", "Mod1", "Mod2", "Cogn_Lo1", "Cogn_Lo2", "Cogn_Lo3", "Cogn_Lo4", "Ment_Eff", "Train_ManCheckTT"]
+    form_fields = ["Intr_Mot1TT", "Intr_Mot2TT", "Mod1", "Mod2", "Pace", "Cogn_Lo1", "Cogn_Lo2", "Cogn_Lo3", "Cogn_Lo4", "Ment_Eff", "Train_ManCheckTT"]
 
     def is_displayed(self):
         return self.subsession.training == "TT"
 
 class PEQ_trainUT(Page):
     form_model = "player"
-    form_fields = ["Intr_Mot1VT", "Intr_Mot2VT", "Intr_Mot3", "Mod1", "Mod2", "Cogn_Lo1", "Cogn_Lo2", "Cogn_Lo3", "Cogn_Lo4", "Ment_Eff", "Train_ManCheckUT"]
+    form_fields = ["Intr_Mot1VT", "Intr_Mot2VT", "Mod1", "Mod2", "Pace", "Cogn_Lo1", "Cogn_Lo2", "Cogn_Lo3", "Cogn_Lo4", "Ment_Eff", "Train_ManCheckUT", "Mood"]
 
     def is_displayed(self):
         return self.subsession.training == "UT"
@@ -389,6 +393,5 @@ class AC_yes(Page):
     def is_displayed(self):
         return self.subsession.accountability == "hoch"
 
-page_sequence = [wel_ins1, Aussortieren_1, fail, Aussortieren_2, fail2, wel_ins2, Comprehension, Lottery_ins, Lottery, train_ov, VT_sec_1, TT_sec_1, UV_sec_1, T_sec_1_ques1, T_sec_1_ques1_fp, T_sec_1_ques1_fn, UV_sec_1_ques1, UV_sec_1_ques1_fp, UV_sec_1_ques1_fn, VT_sec_2, TT_sec_2_1, TT_sec_2_2, UV_sec_2, T_sec_2_ques1, T_sec_2_ques1_fp, T_sec_2_ques1_fn, T_sec_2_ques2, T_sec_2_ques2_fp, T_sec_2_ques2_fn, UV_sec_2_ques1, UV_sec_2_ques1_fp, UV_sec_2_ques1_fn, UV_sec_2_ques2, UV_sec_2_ques2_fp, UV_sec_2_ques2_fn, VT_sec_3, TT_sec_3_1, TT_sec_3_2, UV_sec_3, T_sec_3_ques1, T_sec_3_ques1_fp, T_sec_3_ques1_fn, T_sec_3_ques2, T_sec_3_ques2_fp, T_sec_3_ques2_fn,T_sec_3_ques3, T_sec_3_ques3_fp, T_sec_3_ques3_fn, UV_sec_3_ques1, UV_sec_3_ques1_fp, UV_sec_3_ques1_fn, UV_sec_3_ques2, UV_sec_3_ques2_fp, UV_sec_3_ques2_fn, UV_sec_3_ques3, UV_sec_3_ques3_fp, UV_sec_3_ques3_fn, VT_sec_4, TT_sec_4, UV_sec_4, PEQ_trainTT, PEQ_trainUT, PEQ_trainVT, AC_no, AC_yes]
 
-#page_sequence = [wel_ins1, Aussortieren_1, fail, Aussortieren_2, fail2, wel_ins2, Comprehension, Lottery_ins, Lottery, train_ov, VT_sec_1, TT_sec_1, UV_sec_1, T_sec_1_ques1, T_sec_1_ques1_fp, T_sec_1_ques1_fn, UV_sec_1_ques1, UV_sec_1_ques1_fp, UV_sec_1_ques1_fn, VT_sec_2, TT_sec_2_1, TT_sec_2_2, UV_sec_2, T_sec_2_ques1, T_sec_2_ques1_fp, T_sec_2_ques1_fn, T_sec_2_ques2, T_sec_2_ques2_fp, T_sec_2_ques2_fn, UV_sec_2_ques1, UV_sec_2_ques1_fp, UV_sec_2_ques1_fn, UV_sec_2_ques2, UV_sec_2_ques2_fp, UV_sec_2_ques2_fn, VT_sec_3, TT_sec_3_1, TT_sec_3_2, UV_sec_3, T_sec_3_ques1, T_sec_3_ques1_fp, T_sec_3_ques1_fn, T_sec_3_ques2, T_sec_3_ques2_fp, T_sec_3_ques2_fn,T_sec_3_ques3, T_sec_3_ques3_fp, T_sec_3_ques3_fn, UV_sec_3_ques1, UV_sec_3_ques1_fp, UV_sec_3_ques1_fn, UV_sec_3_ques2, UV_sec_3_ques2_fp, UV_sec_3_ques2_fn, UV_sec_3_ques3, UV_sec_3_ques3_fp, UV_sec_3_ques3_fn, VT_sec_4, TT_sec_4, UV_sec_4, PEQ_trainTT, PEQ_trainUT, PEQ_trainVT, AC_no, AC_yes]
+page_sequence = [wel_ins1, Aussortieren_1, fail, Aussortieren_2, fail2, wel_ins2, Comprehension, PEQ_vortrain, Lottery_ins, Lottery, train_ov, VT_sec_1, TT_sec_1, UV_sec_1, T_sec_1_ques1, T_sec_1_ques1_fp, T_sec_1_ques1_fn, UV_sec_1_ques1, UV_sec_1_ques1_fp, UV_sec_1_ques1_fn, VT_sec_2, TT_sec_2_1, TT_sec_2_2, UV_sec_2, T_sec_2_ques1, T_sec_2_ques1_fp, T_sec_2_ques1_fn, T_sec_2_ques2, T_sec_2_ques2_fp, T_sec_2_ques2_fn, UV_sec_2_ques1, UV_sec_2_ques1_fp, UV_sec_2_ques1_fn, UV_sec_2_ques2, UV_sec_2_ques2_fp, UV_sec_2_ques2_fn, VT_sec_3, TT_sec_3_1, TT_sec_3_2, UV_sec_3, T_sec_3_ques1, T_sec_3_ques1_fp, T_sec_3_ques1_fn, T_sec_3_ques2, T_sec_3_ques2_fp, T_sec_3_ques2_fn,T_sec_3_ques3, T_sec_3_ques3_fp, T_sec_3_ques3_fn, UV_sec_3_ques1, UV_sec_3_ques1_fp, UV_sec_3_ques1_fn, UV_sec_3_ques2, UV_sec_3_ques2_fp, UV_sec_3_ques2_fn, UV_sec_3_ques3, UV_sec_3_ques3_fp, UV_sec_3_ques3_fn, VT_sec_4, TT_sec_4, UV_sec_4, PEQ_trainTT, PEQ_trainUT, PEQ_trainVT, AC_no, AC_yes]

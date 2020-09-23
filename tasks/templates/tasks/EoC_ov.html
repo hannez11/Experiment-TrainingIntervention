@@ -40,7 +40,7 @@ Task {{ roundnumber }}: Investment decision
     <div class="card">
       <div class="card-header" id="headingTwo">
         <h2 class="mb-0">
-          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="color:black" >
+          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onclick="ProjectClick()" style="color:black" >
             <strong>II. General information about the project</strong>
           </button>
         </h2>
@@ -55,14 +55,14 @@ Task {{ roundnumber }}: Investment decision
     <div class="card">
       <div class="card-header" id="headingThree">
         <h2 class="mb-0">
-          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="color:black" >
+          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" onclick="SituationClick()" style="color:black" >
             <strong>III. Current situation</strong>
           </button>
         </h2>
       </div>
       <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#EoC" >
         <div class="card-body" align="justify">
-             However, doubts about the future performance of the project are now emerging. The annual cash flows are expected to decline to $50,000. If this is the case, the net present value is $144,327. On the contrary the net present value is estimated to be $177,500 if the project is abandoned. Especially because of your constant willingness to go the extra mile, you have a high reputation as a project manager. When it comes to project decisions, your colleagues appreciate your consulting skills. In the following meeting next week it should be decided whether the project, which  has  been  initiated  based  on  your  recommendation, should be continued or abandoned. 
+             However, doubts about the future performance of the project are now emerging. The annual cash flows are expected to decline to $50,000. If this is the case, the net present value is $144,327.  On the contrary if the project is abandoned now, you will get $177,500 (salvage value). Especially because of your constant willingness to go the extra mile, you have a high reputation as a project manager. When it comes to project decisions, your colleagues appreciate your consulting skills. In the following meeting next week it should be decided whether the project, which  has  been  initiated  based  on  your  recommendation, should be continued or abandoned. 
         </div>
       </div>
     </div>
@@ -74,8 +74,8 @@ Task {{ roundnumber }}: Investment decision
 
 
 <div style="text-align:center">
-    <button type="button" id="showinfo" class="btn btn-primary btn-large">Comprehension questions</button>
-    </div>
+  <button id="showinfo" type="button" class="btn btn-primary" data-toggle="tooltip" title="Please click on section I, II & III and read all the given information">Show comprehension questions</button>
+  </div>
 
     <div id="questions" style="display:none;">
         <style>
@@ -103,27 +103,42 @@ Task {{ roundnumber }}: Investment decision
         </div>
     
 
-<script>
-    $("#showinfo").on("click", function(e) {
-       e.preventDefault(); // in some browsers a button submits if no type=
-       $("#questions").show(); // show questions div
-       $("#nextbtn").show(); // show next button
-       $("#showinfo").hide(); // hide info box on top
-    });
-    </script>
-
-
 <input type="hidden" name="time_EoC_ov" id="time_EoC_ov" value=0>
 
 <script>
+$("#showinfo").on("click", function(e) {
+    if (overviewRead == 1 && unternehmenRead == 1) { //comp questions button only clickable if section 2 and 3 have been opened
+      e.preventDefault(); // in some browsers a button submits if no type=
+      $("#questions").show(); // show questions div
+      $("#nextbtn").show(); // show next button
+      $("#showinfo").hide(); // hide info box on top
+    }
+});
+
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+
+let overviewRead, unternehmenRead = 0 // will be set to one if respective tab has been opened
+
+function ProjectClick() {
+  overviewRead = 1; //check if section 2 was opened
+}
+
+function SituationClick() {
+  unternehmenRead = 1; //check if section 3 was opened
+}
 
 var sec = 0; // global variable
 
 // increasing timer
 function pad ( val ) { return val > 9 ? val : "0" + val; }
 setInterval( function(){
-    $("#seconds").html(pad(++sec));
     $("#time_EoC_ov").val(sec); // store seconds spent on page in hidden field
+    if (overviewRead == 1 && unternehmenRead == 1) { 
+        $('#showinfo').removeAttr("type"); // removes type attribute from next button so form can be submitted
+        $('#showinfo').removeAttr('data-original-title'); // removes tooltip
+    }
 }, 1000);
 
 </script>

@@ -6,7 +6,7 @@ import random
 
 class CRT(Page):
     form_model = "player"
-    form_fields = ["CRT_1", "CRT_2", "CRT_3", "time_CRT", "tabCRT"]
+    form_fields = ["CRT_2", "time_CRT", "tabCRT"]
 
     def before_next_page(self):
         self.player.get_time("start")
@@ -20,26 +20,23 @@ class Bias_know_UV(Page):
 
 class Bias_know(Page):
     form_model = "player"
-    form_fields = ["BiasKnow1", "BiasKnow2", "BiasKnow3", "BiasKnow4", "BiasKnow5", "tabBiasknow", "time_Biasknow"]
+    form_fields = ["BiasKnow1", "BiasKnow2", "BiasKnow3", "tabBiasknow", "time_Biasknow"]
 
 class PEQ_ov(Page):
     form_model = "player"
 
 class PEQ_1(Page):
     form_model = "player"
-    form_fields = ["DuCha_1", "DuCha_2", "DuCha_3", "Act_Pro_1", "Act_Pro_2", "Pace", "Self_dis", "Satis"]
+    form_fields = ["AccMan_1", "AccMan_3", "AccMan_4", "Sys_1", "Sys_2", "Sys_3", "Act_Pro_1", "Act_Pro_2"]
 
 class PEQ_2(Page):
     form_model = "player"
-    form_fields = ["Sys_4a", "Sys_1", "Sys_2", "Sys_3", "Sys_4", "AccMan_1", "AccMan_2", "AccMan_3", "AccMan_4"]
+    form_fields = ["EoC_Self1", "EoC_Self2", "EoC_Self3", "EoC_sunk1", "EoC_sunk2", "EoC_sunk3", "EoC_Opt1", "EoC_Opt2", "ATTChe"]
 
 class PEQ_3(Page):
     form_model = "player"
-    form_fields = ["EoC_Self1", "EoC_Self2", "EoC_Self3", "EoC_sunk1", "EoC_sunk2", "EoC_sunk3", "EoC_Opt1", "EoC_Opt2"]
+    form_fields = ["Over_1", "Over_2", "Over_3", "OC_Mturk", "Doubt", "AtEx"]
 
-class PEQ_4(Page):
-    form_model = "player"
-    form_fields = ["Over_1", "Over_2", "Over_3", "Over_4", "Over_5"]
 
 class PEQ_person(Page):
     form_model = "player"
@@ -71,8 +68,4 @@ class end(Page):
     form_model = "player"
 
 
-
-page_sequence = [CRT,Bias_know,  Bias_know_UV, PEQ_ov, PEQ_1, PEQ_2, PEQ_3, PEQ_4, PEQ_person, end_vorbereitung, PayoutLottery, end]
-# page_sequence = [CRT, Bias_know_UV, Bias_know, PEQ_ov, PEQ_1, PEQ_2, PEQ_3, PEQ_4, PEQ_person, end_vorbereitung, PayoutLottery, end]
-
-#CRT, Bias_know_UV, Bias_know, PEQ_ov, PEQ_1, PEQ_2, PEQ_3, PEQ_4, PEQ_person, end_vorbereitung, PayoutLottery, end
+page_sequence = [CRT, Bias_know_UV, Bias_know, PEQ_ov, PEQ_1, PEQ_2, PEQ_3, PEQ_person, end_vorbereitung, PayoutLottery, end]

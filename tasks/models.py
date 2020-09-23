@@ -107,7 +107,7 @@ class Player(BasePlayer):
 
     Anchor = models.IntegerField()
 
-    Anchor_Anker=create_mc("Does the jar contain more than 110 peanuts?", [[1,"Yes"],[2,"No"]])
+    Anchor_Anker=create_mc("Does the jar contain more than 95 peanuts?", [[1,"Yes"],[2,"No"]])
 
     Accountability = models.LongStringField()
 

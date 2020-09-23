@@ -37,7 +37,7 @@ Subtask 2: Evaluation of your estimation skills
                 {% if forloop.counter == 1 %}
                 <li>
                     <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
-                    <label>0% - 10%</label>
+                    <label>0% - 10% <br> <br> <span style="font-size:12px">part of the worst participants</label>
                 </li>
                 {% elif forloop.counter == 2 %}
                 <li>
@@ -82,7 +82,7 @@ Subtask 2: Evaluation of your estimation skills
                 {% elif forloop.counter == 10 %}
                 <li>
                     <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
-                    <label>91% - 100%</label>
+                    <label>91% - 100% <br> <br> <span style="font-size:12px">part of the best participants</label>
                 </li>
                 {% endif %}
             {% endfor %}

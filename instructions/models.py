@@ -68,6 +68,10 @@ def create_peq(labelinput):
 def create_mc(mc,choiceslist):
     return models.IntegerField(verbose_name = mc,choices=choiceslist,widget=widgets.RadioSelect)
 
+def create_neu(mc,choiceslist):
+    return models.IntegerField(verbose_name = mc,choices=choiceslist,widget=widgets.RadioSelectHorizontal)
+
+
 
 class Player(BasePlayer):
 
@@ -87,7 +91,7 @@ class Player(BasePlayer):
 
     procedure=create_mc("What is the order of the main part of the experiment?", [[1, "First you will be given three decision-making tasks, then you have to complete a training."], [2, "First you have to complete a training, then you will be given three decision-making tasks."]])
 
-    NPV=create_mc("What is the formula to calculate the NPV in this example?", [[1, "NPV = (-110) + 726"], [2, "NPV = (-200) + (-110) + 726"], [3, "NPV = (-200) + ((-110) + 726) / (1,1)"], [4, "NPV = (-200) + (-110) / (1,1) + (726) / (1,1)^2"], [5, "NPV = (-200 + (-110) + 726) / (1,1)"], [6, "NPV = (-110) / (1,1) + (726) / (1,1)^2"]])
+    NPV=create_neu("What is the formula to calculate the NPV in this example?", [[1, "A"], [2, "B"], [3, "C"], [4, "D"], [5, "E"], [6, "F"]])
 
     lottery_choice = models.PositiveIntegerField(choices=[[i, f"Scenario {i}"] for i in range(1,16)], widget=widgets.RadioSelect) #Lottery page; reuse in main experiment to determine payout
 
@@ -99,7 +103,7 @@ class Player(BasePlayer):
 
     UVsec2_quest2=create_mc("What was the result of the implementation of various ESG initiatives at state street?", [[1, "$23 mio. operational costs can be saved annually and 100k tons of carbon can be avoided."], [2, "$23 mio. operational costs must be paid annually but therefore, 100k tons of carbon can be avoided."], [3, "$23 mio. operational costs can be saved annually but therefore, 100k tons of carbon are additionally emitted."], [4, "$23 mio. operational costs must be paid annually and 100k tons of carbon are additionally emitted."]])
 
-    Tsec3_quest1=create_mc("Which of the statements is correct?", [[1, "Frequently repeating decisions should be answered with the help of System 2."], [2, "Only if your System 1 approves, a decision can be made."], [3, "System 1 sometimes fails to overcome intuitive suggestions."], [4, "Only System 2 can follow rules and evaluate alternatives."]])
+    Tsec3_quest1=create_mc("Which of the statements is correct?", [[1, "When making a decision, personal effort in the past should be considered in addition to monetary costs."], [2, "Sunk costs, e.g. past monetary costs or past personal effort, should not play a role in a decision-making process."], [3, "When making a decision, personal effort in the past should not be considered, but past monetary costs should."], [4, "A decision should take future and sunk costs into account."]])
 
     Tsec3_quest2=create_mc("Which of the statements is correct?", [[1, "The external environment has no influence on the decision-making process."], [2, "External influences and you yourself can cause cognitive biases."], [3, "There is nothing you can do yourself to make the decision-making process better."], [4, "To improve the efficiency of the decision-making process, System 2 should always be used."]])
 
@@ -119,11 +123,12 @@ class Player(BasePlayer):
     
     Intr_Mot2TT=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="The text was interesting.")
     
-    Intr_Mot3=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="I could imagine to deal with this topic during my leisure time.")
 
     Mod1=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="The presence of the moderator in the training enhanced my learning process.")
 
     Mod2=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="I have found the moderator useful in the training.")
+
+    Pace=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="It is important to me to determine the learning pace myself.")
 
     Cogn_Lo1=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="It was easy for me to learn something from the presentation I just saw.")
 
@@ -135,11 +140,19 @@ class Player(BasePlayer):
 
     Ment_Eff=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="Please indicate the mental effort you perceived during the training.")
 
+    Mood=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="How do you feel today?")
+
     Train_ManCheckVT=create_mc("The training was designed as:", [[1, " a video training on cognitive biases."], [2, "a text training on cognitive biases."], [3, "a video training on sustainable investing."], [4,  "a text training on sustainable investing."]])
 
     Train_ManCheckTT=create_mc("The training was designed as:", [[1, " a video training on cognitive biases."], [2, "a text training on cognitive biases."], [3, "a video training on sustainable investing."], [4,  "a text training on sustainable investing."]])
 
     Train_ManCheckUT=create_mc("The training was designed as:", [[1, " a video training on hedge funds."], [2, "a text training on hedge funds."], [3, "a video training on sustainable investing."], [4,  "a text training on sustainable investing."]])
+
+    DuCha_1=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="I can learn best when the content is presented...")
+
+    Estima=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="I think I perform well in estimation tasks.")
+
+    Analy=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="I think I perform well in analytical tasks.")
 
 
 
