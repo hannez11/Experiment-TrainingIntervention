@@ -69,40 +69,8 @@ Investment decision
 <br>
 <br>
 
-<head>
-  <style>
-  .Buttonunsichtbar{
-  position:absolute;
-  display: none;
-  }
-   
-  .Buttonsichtbar{
-  position:absolute;
-  }
-  </style>
-  <script>
-  function buttonsichtbar(){
-  document.getElementById("Button").className="Buttonsichtbar";
-  }
-  window.setTimeout("buttonsichtbar()", 30000);
-  </script>
-  </head>
-  <body>
-      <div class="row">
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>
-          <div class="col-md-1"></div>            
-          <div class="col-md-1"></div>
-          <div class="col-md-1"><input type="submit" id="Button" value="Next" class="Buttonunsichtbar" style="color:white; BACKGROUND-COLOR:rgb(23, 118, 228);"></div>
-        </div>
-  </body>
-
+<div id="nextbtn" style="text-align:right; display:true">
+  {% next_button %}
+</div>
 
 {% endblock %}

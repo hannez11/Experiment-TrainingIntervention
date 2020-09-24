@@ -12,12 +12,14 @@ Please answer the following questions:
 
 {% block content %}
 
+
+
 <div class="col-12 alert alert-info" role="alert" style="color:black">
-    The following questions refer to the dual system theory. Please do not look up the answers on the internet. 
+    <span style="font-size:16px"> <strong>The following questions refer to the dual-system theory.</strong> </span>
    </div> 
 
-<br>
 
+<br>
 {% for field in form %}
 {% if field.html_name != "tabBiasknow" and field.html_name != "time_Biasknow"  %}
     <div class="card bg-light m-3">

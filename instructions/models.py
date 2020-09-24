@@ -85,7 +85,7 @@ class Player(BasePlayer):
 
     sound_image_check=create_mc("Which of the statements about the video shown above is correct?", [[1,"I could see a cow and I heard a cat meow."],[2,"I could see a dog and I heard a cat meow."], [3, "I could see a cow and I heard a rooster crow."], [4, "I could see a dog and I heard a rooster crow."]])
 
-    compensation=create_mc("What is the composition of your total compensation?", [[1,"Fixed component + variable component"], [2, "Fixed component + lottery payout"], [3, "Variable component + lottery payout"], [4, "Fixed component only"]])
+    compensation=create_mc("What is the composition of your total compensation?", [[1,"Variable component only "], [2, "Fixed component + lottery payout"], [3, "Variable component + lottery payout"], [4, "Fixed component only"]])
 
     independency=create_mc("The three decision-making tasks are independent of each other.", [[1, "Yes"],[2, "No"]])
 
@@ -103,7 +103,7 @@ class Player(BasePlayer):
 
     UVsec2_quest2=create_mc("What was the result of the implementation of various ESG initiatives at state street?", [[1, "$23 mio. operational costs can be saved annually and 100k tons of carbon can be avoided."], [2, "$23 mio. operational costs must be paid annually but therefore, 100k tons of carbon can be avoided."], [3, "$23 mio. operational costs can be saved annually but therefore, 100k tons of carbon are additionally emitted."], [4, "$23 mio. operational costs must be paid annually and 100k tons of carbon are additionally emitted."]])
 
-    Tsec3_quest1=create_mc("Which of the statements is correct?", [[1, "When making a decision, personal effort in the past should be considered in addition to monetary costs."], [2, "Sunk costs, e.g. past monetary costs or past personal effort, should not play a role in a decision-making process."], [3, "When making a decision, personal effort in the past should not be considered, but past monetary costs should."], [4, "A decision should take future and sunk costs into account."]])
+    Tsec3_quest1=create_mc("Which of the statements is correct?", [[1, "When making a decision, personal effort in the past should be considered in addition to monetary costs."], [2, "Sunk costs, e.g. past monetary costs or past personal effort, should not play a role in a decision-making process."], [3, "When making a decision, personal effort in the past should not be considered, but past monetary costs should."], [4, "A decision should take future and past costs into account."]])
 
     Tsec3_quest2=create_mc("Which of the statements is correct?", [[1, "The external environment has no influence on the decision-making process."], [2, "External influences and you yourself can cause cognitive biases."], [3, "There is nothing you can do yourself to make the decision-making process better."], [4, "To improve the efficiency of the decision-making process, System 2 should always be used."]])
 
