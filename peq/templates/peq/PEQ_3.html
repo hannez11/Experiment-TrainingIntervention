@@ -128,7 +128,7 @@ font-size: small;
                 {% if forloop.counter == 1 %}
                 <li>
                     <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
-                    <label>0% - 10% <br> <span style="font-size:12px">worst participants</label>
+                    <label>0% - 10% <br> <br><span style="font-size:12px">worst participants</label>
                 </li>
                 {% elif forloop.counter == 2 %}
                 <li>
@@ -173,7 +173,7 @@ font-size: small;
                 {% elif forloop.counter == 10 %}
                 <li>
                     <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
-                    <label>91% - 100% <br> <span style="font-size:12px">best participants</label>
+                    <label>91% - 100% <br><br> <span style="font-size:12px">best participants</label>
                 </li>
                 {% endif %}
             {% endfor %}
