@@ -89,7 +89,7 @@ class Player(BasePlayer):
 
     independency=create_mc("The three decision-making tasks are independent of each other.", [[1, "Yes"],[2, "No"]])
 
-    procedure=create_mc("What is the order of the main part of the experiment?", [[1, "First you will be given three decision-making tasks, then you have to complete a training."], [2, "First you have to complete a training, then you will be given three decision-making tasks."]])
+    procedure=create_mc("What is the order of the main part of the experiment?", [[1, "First you will be given three decision-making tasks, then you will have to complete a training."], [2, "First you will have to complete a training, then you will be given three decision-making tasks."]])
 
     NPV=create_neu("What is the formula to calculate the NPV in this example?", [[1, "A"], [2, "B"], [3, "C"], [4, "D"], [5, "E"], [6, "F"]])
 
@@ -124,9 +124,9 @@ class Player(BasePlayer):
     Intr_Mot2TT=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="The training interesting.")
     
 
-    Mod1=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="The presence of the moderator in the training enhanced my learning process.")
+    Mod1=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="The presence of the trainer in the training enhanced my learning process.")
 
-    Mod2=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="I have found the moderator useful in the training.")
+    Mod2=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="I have found the trainer useful in the training.")
 
     Pace=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7], label="It is important to me to determine the learning pace myself.")
 

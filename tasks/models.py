@@ -115,6 +115,8 @@ class Player(BasePlayer):
 
     EoC_task=models.IntegerField(widget=widgets.RadioSelect, choices=[1,2,3,4,5,6,7,8,9,10], label="How would you decide on the continuation of the project?")
 
+    Initial=create_mc("Which of the two projects will you present at the meeting?", [[1, "Project A"], [2, "Project B"]])
+
     OC_comp1_quest1=create_mc("How many intervals should you estimate?", [[1, "9"], [2, "5"], [3, "10"], [4, "1"]])
 
     OC_comp1_quest2=create_mc("90 % certainty means,", [[1, "that 9 out of 10 of your estimated intervals do not include the correct answer."], [2, "that 1 out of 10 of your estimated intervals does not include the correct answer."], [3, "only 9 out of 10 intervals need to be estimated."], [4, "all of the 10 of your estimated intervals include the correct answer."]])
@@ -145,6 +147,7 @@ class Player(BasePlayer):
 
 
     time_EoC_ov = models.StringField()
+    time_EoC_ov2 = models.StringField()
     time_EoC_task = models.StringField()
     time_OC_task1 = models.StringField()
     time_OC_task2 = models.StringField()

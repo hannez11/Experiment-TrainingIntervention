@@ -1,0 +1,177 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block head_title %}
+  Main Part
+{% endblock %}
+
+{% block title %}
+Task {{ roundnumber }}: Investment decision
+{% endblock %}
+
+
+{% block content %}
+
+<br>
+
+<div class="alert alert-secondary" role="alert" align="justify">
+    In the following task you have to make an <strong>investment decision.</strong> Click on the sections I, II and III and read the instructions carefully. To ensure that you have understood the instructions, you will receive two comprehension questions on the next page. While working on the task, you have the opportunity to review the instructions. To do so, click on the button provided at the end of the corresponding page. <strong>Please assume the following situation and try to put yourself in the described role. </strong>
+  </div>
+
+  <br>
+  <div class="accordion" id="EoC">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="color:black" >
+            <strong>I. General information about your role</strong>
+          </button>
+        </h2>
+      </div>
+  
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#EoC" >
+        <div class="card-body" align="justify">
+            You have been working as a project manager in a food company for several years. Your area of responsibility includes initiating lucrative projects as well as monitoring them and deciding on their further progress.<strong> The performance of these projects is always uncertain.</strong> Due to this uncertainty, decisions must be supported by several colleagues. You are very ambitious and always looking for outstanding projects.
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onclick="ProjectClick()" style="color:black" >
+            <strong>II. Day of the decision</strong>
+          </button>
+        </h2>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#EoC" >
+        <div class="card-body" align="justify">
+            In the last few weeks you have worked out drafts for two different investment projects. This afternoon you have a crucial meeting with your colleagues. At this meeting it will be decided which projects are to be launched next year. Unfortunately, you are only allowed to present one project in the meeting for approval. You are still undecided about which one you will present. Therefore you look at the core information again.
+        </div>
+      </div>
+    </div>
+<br>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" onclick="SituationClick()" style="color:black" >
+            <strong>III. Core Information about the two projects</strong>
+          </button>
+        </h2>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#EoC" >
+        <div class="card-body" align="justify">
+            <table class="table table-hover">
+                <thead>
+                  <tr class="table-secondary">
+                    <th scope="col"></th>
+                    <th align="center"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Project A</th>
+                    <th scope="col"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Project B</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Investment object</th>
+                        <td>Machine for the production <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of <strong>curly fries</strong></td>
+                        <td>Machine for the production <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of <strong>regular fries</strong></td>
+                      </tr>
+                  <tr>
+                    <th scope="row">Annualy expected cashflow</th>
+                    <td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ 270,000</td>
+                    <td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ 270,000</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Overall costs: <br> &nbsp;&nbsp;&nbsp;- Purchase costs  <br> &nbsp;&nbsp;&nbsp;- Installation costs <br> &nbsp;&nbsp;&nbsp;- License costs</th>
+                    <td ><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ 400,000 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ 350,000 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ 250,000</td>
+                    <td ><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ 550,000 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ 300,000 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ 150,000</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Project duration</th>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7 years</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7 years</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Application area</th>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;west coast</td>
+                    <td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;east coast</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div></div></div>
+    </div>
+
+<br>
+
+
+
+<div style="text-align:center">
+    <button id="showinfo" type="button" class="btn btn-primary" data-toggle="tooltip" title="Please click on section I, II & III and read all the given information">Make a decision</button>
+    </div>
+  <br>
+      <div id="questions" style="display:none;">
+          <style>
+          .input-group, input.form-control, select.form-control, textarea.form-control {
+              max-width: 150px;
+          }
+          </style>
+      {% for field in form %}
+      {% if field.html_name != "time_EoC_ov" %}
+      <div class="card bg-light m-3">
+          <div class="card-body">
+      
+                  <b>{{ field.label }}</b>
+                  <hr>
+                  {{ field }}
+              </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+      </div>
+      
+          
+          <div id="nextbtn" onclick="appendtimer()" style="text-align:right; display:none">
+              {% next_button %}
+          </div>
+    
+
+<input type="hidden" name="time_EoC_ov" id="time_EoC_ov" value=0>
+
+<script>
+$("#showinfo").on("click", function(e) {
+    if (overviewRead == 1 && unternehmenRead == 1) { //comp questions button only clickable if section 2 and 3 have been opened
+      e.preventDefault(); // in some browsers a button submits if no type=
+      $("#questions").show(); // show questions div
+      $("#nextbtn").show(); // show next button
+      $("#showinfo").hide(); // hide info box on top
+    }
+});
+
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+
+let overviewRead, unternehmenRead = 0 // will be set to one if respective tab has been opened
+
+function ProjectClick() {
+  overviewRead = 1; //check if section 2 was opened
+}
+
+function SituationClick() {
+  unternehmenRead = 1; //check if section 3 was opened
+}
+
+var sec = 0; // global variable
+
+// increasing timer
+function pad ( val ) { return val > 9 ? val : "0" + val; }
+setInterval( function(){
+    $("#time_EoC_ov").val(sec); // store seconds spent on page in hidden field
+    if (overviewRead == 1 && unternehmenRead == 1) { 
+        $('#showinfo').removeAttr("type"); // removes type attribute from next button so form can be submitted
+        $('#showinfo').removeAttr('data-original-title'); // removes tooltip
+    }
+}, 1000);
+
+</script>
+
+{% endblock %}
