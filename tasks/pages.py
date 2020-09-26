@@ -4,7 +4,7 @@ from .models import Constants
 
 class EoC_ov1(Page):
     form_model = "player"
-    form_fields = ["Initial", "time_EoC_ov"]
+    form_fields = ["Initial", "time_EoC_ov", "time_EoC_ovCheck"]
 
     def is_displayed(self):
         return self.round_number == self.participant.vars['task_rounds']["escalation"]

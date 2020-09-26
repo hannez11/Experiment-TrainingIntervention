@@ -103,7 +103,7 @@ Task {{ roundnumber }}: Investment decision
           }
           </style>
       {% for field in form %}
-      {% if field.html_name != "time_EoC_ov" %}
+      {% if field.html_name == "Initial" %}
       <div class="card bg-light m-3">
           <div class="card-body">
       
@@ -155,6 +155,23 @@ setInterval( function(){
         $('#showinfo').removeAttr("type"); // removes type attribute from next button so form can be submitted
         $('#showinfo').removeAttr('data-original-title'); // removes tooltip
     }
+}, 1000);
+
+</script>
+
+
+
+<input type="hidden" name="time_EoC_ovCheck" id="time_EoC_ovCheck" value=0>
+
+<script>
+
+var sec = 0; // global variable
+
+// increasing timer
+function pad ( val ) { return val > 9 ? val : "0" + val; }
+setInterval( function(){
+    $("#seconds").html(pad(++sec));
+    $("#time_EoC_ovCheck").val(sec); // store seconds spent on page in hidden field
 }, 1000);
 
 </script>

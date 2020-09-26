@@ -146,7 +146,8 @@ class Player(BasePlayer):
     EoC_comp1_quest2b=create_mc("Initiating your project was…", [[1, "…very laborious. You had to assert yourself against your colleagues and put a lot of time and effort into the project."], [2, "…not exhausting. You only had to supervise the project on the side and were rarely involved."]])
 
 
-    time_EoC_ov = models.StringField()
+    time_EoC_ov = models.StringField() 
+    time_EoC_ovCheck = models.StringField()
     time_EoC_ov2 = models.StringField()
     time_EoC_task = models.StringField()
     time_OC_task1 = models.StringField()
