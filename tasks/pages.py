@@ -14,14 +14,14 @@ class EoC_ov1(Page):
 
 class EoC_ov(Page):
     form_model = "player"
-    form_fields = ["EoC_comp1_quest1", "EoC_comp1_quest2", "time_EoC_ov2"]
+    form_fields = ["EoC_comp1_quest2","EoC_comp1_quest1", "time_EoC_ov2"]
 
     def is_displayed(self):
         return self.round_number == self.participant.vars['task_rounds']["escalation"] and self.player.Initial==1 
 
 class EoC_ovB(Page):
     form_model = "player"
-    form_fields = ["EoC_comp1_quest1", "EoC_comp1_quest2", "time_EoC_ov2"]
+    form_fields = ["EoC_comp1_quest2","EoC_comp1_quest1","time_EoC_ov2"]
 
     def is_displayed(self):
         return self.round_number == self.participant.vars['task_rounds']["escalation"] and self.player.Initial==2 
@@ -32,7 +32,7 @@ class EoC_instructions(Page):
 
 class EoC_comp1(Page):
     form_model = "player"
-    form_fields = ["EoC_comp1_quest1b", "EoC_comp1_quest2b"]
+    form_fields = ["EoC_comp1_quest2b", "EoC_comp1_quest1b"]
     def is_displayed(self):
         return (self.player.EoC_comp1_quest1!=3 or self.player.EoC_comp1_quest2!=1) and self.round_number == self.participant.vars['task_rounds']["escalation"]
 
@@ -195,6 +195,7 @@ class AC_just(Page):
 
 
 
-page_sequence = [EoC_ov1, EoC_ov, EoC_ovB, EoC_instructions, EoC_comp1, EoC_task, OC_ov, OC_comp1, OC_instruction1, OC_comp1_2, OC_task1, OC_comp2, OC_instruction2, OC_comp2_2, OC_task2, Anchor_ov, Anchor_task, AC_rand_EoC, AC_rand_Anchor, AC_rand_OC1, AC_rand_OC2, AC_just]
+page_sequence = [EoC_ov1, EoC_ov, EoC_ovB, EoC_instructions, EoC_comp1, EoC_task]
+#page_sequence = [EoC_ov1, EoC_ov, EoC_ovB, EoC_instructions, EoC_comp1, EoC_task, OC_ov, OC_comp1, OC_instruction1, OC_comp1_2, OC_task1, OC_comp2, OC_instruction2, OC_comp2_2, OC_task2, Anchor_ov, Anchor_task, AC_rand_EoC, AC_rand_Anchor, AC_rand_OC1, AC_rand_OC2, AC_just]
 
 

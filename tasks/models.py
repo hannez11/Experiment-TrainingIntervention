@@ -137,13 +137,13 @@ class Player(BasePlayer):
 
     OC_comp2_quest2b=create_mc("The lower the value, the better you estimate your position.", [[1,"True"], [2, "False"]])
 
-    EoC_comp1_quest1=create_mc("What is your area of responsibility as a project manager?", [[1, "Only to initiate lucrative projects."], [2, "To monitor and decide on progress of projects."], [3, "To initiate, to monitor and to decide on the progress of projects. "]])
+    EoC_comp1_quest1=create_mc("Which of the following statements is correct?", [[1, "The life span of your project is over and you are looking for a new lucrative project."], [2, "Your project is going better than expected and still has fantastic predictions."], [3, "The further development of your project is uncertain and you have to decide on the further course."]])
 
-    EoC_comp1_quest2=create_mc("Initiating the project was…", [[1, "…very laborious. You had to assert yourself against your colleagues and put a lot of time and effort into the project."], [2, "…not exhausting. You only had to supervise the project on the side and were rarely involved."]])
+    EoC_comp1_quest2=create_mc("Initiating your project was…", [[1, "…very laborious. You had to assert yourself against your colleagues and put a lot of time and effort into the project."], [2, "…not exhausting. You only had to supervise the project on the side and were rarely involved."]])
 
-    EoC_comp1_quest1b=create_mc("What is your area of responsibility as a project manager?", [[1, "Only to initiate lucrative projects."], [2, "To monitor and decide on progress of projects."], [3, "To initiate, to monitor and to decide on the progress of projects. "]])
+    EoC_comp1_quest1b=create_mc("Which of the following statements is correct?", [[1, "The life span of your project is over and you are looking for a new lucrative project."], [2, "Your project is going better than expected and still has fantastic predictions."], [3, "The further development of your project is uncertain and you have to decide on the further course."]])
 
-    EoC_comp1_quest2b=create_mc("Initiating the project was…", [[1, "…very laborious. You had to assert yourself against your colleagues and put a lot of time and effort into the project."], [2, "…not exhausting. You only had to supervise the project on the side and were rarely involved."]])
+    EoC_comp1_quest2b=create_mc("Initiating your project was…", [[1, "…very laborious. You had to assert yourself against your colleagues and put a lot of time and effort into the project."], [2, "…not exhausting. You only had to supervise the project on the side and were rarely involved."]])
 
 
     time_EoC_ov = models.StringField()
