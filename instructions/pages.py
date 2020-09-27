@@ -46,7 +46,7 @@ class Comprehension(Page):
 
 class PEQ_vortrain(Page):
     form_model = "player"
-    form_fields = ["Estima", "Mood", "DuCha_1", "Analy"] 
+    form_fields = ["Mood", "DuCha_1", "Estima", "Analy"] 
 
 class Lottery_ins(Page):
     form_model = "player"

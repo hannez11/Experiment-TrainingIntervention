@@ -14,25 +14,18 @@ Main Part
 
 <div class="col-12 alert alert-info" role="alert" style="color:black">
     There are no right or wrong answers. Take the time you need and answer all questions honestly.<strong> <br>Please note that the scale labeling may change.</strong>
-   </div> 
+</div> 
 
 <br>
 
 {% for field in form %}
-{% if field.html_name == "Mood" %}
+
 <div class="card">
-  
-  {% comment %}check if dynamic label is used via length of var_for_templates. if not, use regular form label{% endcomment %}
-  {% if q_label|length >= 1 %}
-  <div class="card-header" style="text-align:left;">
-    <label class="statement"><b>{{ q_label|get_at_index:forloop.counter0 }}</b></label> 
-  </div>
-  {% else %}
   <div class="card-header" style="text-align:left;">
     <label class="statement"><b>{{ field.label }}</b></label> 
   </div>
-  {% endif %}
-
+  
+  {% if field.html_name == "Mood" %}
     <div class="card-body">
         <ul class="{{ field.html_name }}" id="questionitem">
             {% for choice in field %}
@@ -58,72 +51,41 @@ Main Part
     </div>    
     
 <br>   
-{% endif %}    
-{% endfor %}
 
-{% for field in form %}
-{% if field.html_name == "DuCha_1" %}
-<div class="card">
-  
-  {% comment %}check if dynamic label is used via length of var_for_templates. if not, use regular form label{% endcomment %}
-  {% if q_label|length >= 1 %}
-  <div class="card-header" style="text-align:left;">
-    <label class="statement"><b>{{ q_label|get_at_index:forloop.counter0 }}</b></label> 
-  </div>
-  {% else %}
-  <div class="card-header" style="text-align:left;">
-    <label class="statement"><b>{{ field.label }}</b></label> 
-  </div>
-  {% endif %}
-
-    <div class="card-body">
-        <ul class="{{ field.html_name }}" id="questionitem">
-            {% for choice in field %}
-                {% if forloop.counter == 1 %}
-                <li>
-                    <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
-                    <label>visually<br> <br>(e.g. book/text)</label>
-                </li>
-                {% elif forloop.counter == 7 %}
-                <li>
-                    <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
-                    <label>audibly <br><br> (e.g. podcast)  </label>
-                </li>
-                {% elif forloop.counter == 4 %}
-                <li>
-                    <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
-                    <label>visually and audibly<br>(e.g. video)</label>
-                </li>
-                {% else %}
-                  <li>
-                      <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
-                      <label>{{ forloop.counter }}</label>
-                  </li>
-                {% endif %}
-            {% endfor %}
-          </ul>
-        </div>
-    </div>    
+{% elif field.html_name == "DuCha_1" %}
+<div class="card-body">
+  <ul class="{{ field.html_name }}" id="questionitem">
+    {% for choice in field %}
+    {% if forloop.counter == 1 %}
+    <li>
+      <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
+      <label>visually<br> <br>(e.g. book/text)</label>
+    </li>
+    {% elif forloop.counter == 7 %}
+    <li>
+      <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
+      <label>audibly <br><br> (e.g. podcast)  </label>
+    </li>
+    {% elif forloop.counter == 4 %}
+    <li>
+      <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
+      <label>visually and audibly<br>(e.g. video)</label>
+    </li>
+    {% else %}
+    <li>
+      <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
+      <label>{{ forloop.counter }}</label>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+</div>
     
+
 <br>   
-{% endif %}    
-{% endfor %}
 
-{% for field in form %}
-{% if field.html_name == "Estima" %}
-<div class="card">
-  
-  {% comment %}check if dynamic label is used via length of var_for_templates. if not, use regular form label{% endcomment %}
-  {% if q_label|length >= 1 %}
-  <div class="card-header" style="text-align:left;">
-    <label class="statement"><b>{{ q_label|get_at_index:forloop.counter0 }}</b></label> 
-  </div>
-  {% else %}
-  <div class="card-header" style="text-align:left;">
-    <label class="statement"><b>{{ field.label }}</b></label> 
-  </div>
-  {% endif %}
-
+{% elif field.html_name == "Estima" %}
     <div class="card-body">
         <ul class="{{ field.html_name }}" id="questionitem">
             {% for choice in field %}
@@ -148,52 +110,40 @@ Main Part
         </div>
     </div>    
     
-<br>   
-{% endif %}    
-{% endfor %}
-
-{% for field in form %}
-{% if field.html_name == "Analy" %}
-<div class="card">
-  
-  {% comment %}check if dynamic label is used via length of var_for_templates. if not, use regular form label{% endcomment %}
-  {% if q_label|length >= 1 %}
-  <div class="card-header" style="text-align:left;">
-    <label class="statement"><b>{{ q_label|get_at_index:forloop.counter0 }}</b></label> 
-  </div>
-  {% else %}
-  <div class="card-header" style="text-align:left;">
-    <label class="statement"><b>{{ field.label }}</b></label> 
-  </div>
-  {% endif %}
-
-    <div class="card-body">
-        <ul class="{{ field.html_name }}" id="questionitem">
-            {% for choice in field %}
-                {% if forloop.counter == 1 %}
-                <li>
-                    <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
-                    <label>fully disagree</label>
-                </li>
-                {% elif forloop.counter == 7 %}
-                <li>
-                    <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
-                    <label>fully agree</label>
-                </li>
-                {% else %}
-                  <li>
-                      <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
-                      <label>{{ forloop.counter }}</label>
-                  </li>
-                {% endif %}
-            {% endfor %}
-          </ul>
-        </div>
-    </div>    
+<br>  
     
+{% elif field.html_name == "Analy" %}
+<div class="card-body">
+    <ul class="{{ field.html_name }}" id="questionitem">
+        {% for choice in field %}
+            {% if forloop.counter == 1 %}
+            <li>
+                <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
+                <label>fully disagree</label>
+            </li>
+            {% elif forloop.counter == 7 %}
+            <li>
+                <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
+                <label>fully agree</label>
+            </li>
+            {% else %}
+              <li>
+                  <input id="id_{{ field.html_name }}_{{ forloop.counter }}" type="radio" name="{{ field.html_name }}" value="{{ forloop.counter }}" class="form-check-input" required>
+                  <label>{{ forloop.counter }}</label>
+              </li>
+            {% endif %}
+        {% endfor %}
+      </ul>
+  </div>
+</div>
+
 <br>   
 {% endif %}    
 {% endfor %}
+
+
+
+
 
 <div id="nextbtn" style="text-align:right; display:true">
     {% next_button %}
