@@ -46,6 +46,17 @@ SESSION_CONFIGS = [
 
 SESSION_CONFIG_DEFAULTS = dict(
     real_world_currency_per_point=1.00, participation_fee=3.75, doc=""
+),
+dict(
+    keywords='bonus, study',
+    title='Title for your experiment',
+    description='Description for your experiment',
+    frame_height=500,
+    template='global/mturk_template.html',
+    minutes_allotted_per_assignment=60,
+    expiration_hours=7 * 24,
+    qualification_requirements=[]
+    # grant_qualification_id='YOUR_QUALIFICATION_ID_HERE', # to prevent retakes
 )
 
 # ISO-639 code
